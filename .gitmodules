@@ -1,0 +1,3 @@
+[submodule "teachingdb_data"]
+	path = teachingdb_data
+	url = https://github.com/freestackinitiative/teachingdb_data.git

@@ -22,7 +22,9 @@ Topics Covered: Basic joins, filters, and basic pattern matching
 
 Topics Covered: Joins and Aggregations
 
-**SQL Murder Mystery**
+**SQL Murder Mystery** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_Murder_Mystery.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
 
 A murder happened in SQL City, and we need your SQL skills to help crack the case! Put the skills that you learned in SQL 101 and 102 to the test and solve the SQL Murder Mystery!
 

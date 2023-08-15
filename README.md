@@ -22,6 +22,8 @@ Topics Covered: Basic joins, filters, and basic pattern matching
 
 Topics Covered: Joins and Aggregations
 
+--- 
+
 **SQL Murder Mystery** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_Murder_Mystery.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>

@@ -4,7 +4,7 @@ These notebooks are meant to accompany the slide deck lectures for the SQL 101 a
 
 Each notebook has a practice section set up for each major topic covered in its respective lesson. There are also some extra practice sessions included: A pattern-matching section in the 101 workbook, and a deeper dive into joins in the 102 workbook. At the end of each notebook are a list of resources for extra practice.
 
-I also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/#aggregates) to use as a companion to the notebooks and lessons. I made the cheat sheet with the lesson content in SQL 101 and 102 in mind.
+I also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/) to use as a companion to the notebooks and lessons. I made the cheat sheet with the lesson content in SQL 101 and 102 in mind.
 
 You can open the notebooks directly in Google Colab by using the links below next to the notebook title:
 
@@ -21,3 +21,9 @@ Topics Covered: Basic joins, filters, and basic pattern matching
 </a>
 
 Topics Covered: Joins and Aggregations
+
+**SQL Murder Mystery**
+
+A murder happened in SQL City, and we need your SQL skills to help crack the case! Put the skills that you learned in SQL 101 and 102 to the test and solve the SQL Murder Mystery!
+
+Topics Covered: Joins, Aggregations, Filtering, Basic Pattern Matching

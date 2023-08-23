@@ -12,6 +12,8 @@ You can open the notebooks directly in Google Colab by using the links below nex
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
+Theory Section: [Introduction to Databases and Relational Databases](COOP%20SQL%20101%20-%20Theory%20-%20Intro%20to%20Databases%20and%20Relational%20Databases.md)
+
 Topics Covered: Basic joins, filters, and basic pattern matching
 
 ---

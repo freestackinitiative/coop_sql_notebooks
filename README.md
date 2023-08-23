@@ -8,7 +8,7 @@ I also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheat
 
 You can open the notebooks directly in Google Colab by using the links below next to the notebook title:
 
-**SQL 101 Notebook** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_101.ipynb">
+**SQL 101 Notebook - Intro to Databases and Querying** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/2.0/COOP_SQL_101.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

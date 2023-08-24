@@ -133,7 +133,16 @@ SQL is also known as a declarative language. This means that when we write queri
 
 Another important point to reiterate is that SQL itself is just a specification. **Different RDBMS vendors create their own versions of SQL** based on that specification. This is why the syntax between the SQL for one RDBMS will differ (albeit slightly) from that of another RDBMS system. In practice, this means that you should always be aware of what RDBMS you are using so that you know which set of documentation you would need to use.
 
-The rest of the material in SQL 101 is devoted to teaching you the basics of SQL querying that can be applied to just about any version of the language you may encounter.
+**SQL Sub-languages**
+
+SQL can be further divided into five sub-languages, each of which contains commands for specific tasks such as creating databases, manipulating data, or querying data. Of the five, we will primarily focus on the Data Query Language (DQL). The five sub-languages are, in no particular order:
+- **Data Defintion Language (DDL)**: Used for creating or modifying the structure of tables or databases. Common DDL commands include `CREATE`, `DROP`, or `ALTER`
+- **Data Manipulation Language (DML)**: Used for manipulating data that is already stored in the database, typically by either adding, removing, or updating the data. Common DML commands include `INSERT`, `UPDATE`, and `DELETE`.
+- **Data Query Language (DQL)**: Used for querying data in the database. DQL is where the `SELECT` command comes from.
+- **Data Control Language (DCL)**: Used for granting or modifying access to data stored in tables. Common DCL commands include `GRANT` and `REVOKE`.
+- **Transaction Control Language (TCL)**: Used for controlling transactions in the database. Common TCL commands include `COMMIT`, `SAVEPOINT`, and `ROLLBACK`.
+
+![SQL Sub-languages: DDL, DML, DQL, DCL, and TCL](assets/sql-sub-languages.png)
 
 ### What's next?
 
@@ -144,3 +153,5 @@ We have only scratched the surface of the topics that were introduced here. And 
 - [Data Warehouse Toolkit, 3rd Edition (Kimball)](https://www.academia.edu/19222417/The_Data_Warehouse_Toolkit_3rd_Edition)
 - [Primary Keys and Foreign Keys Explained](https://youtu.be/B5r8CcTUs5Y?si=asEl57bsIEVpghrE)
 - [SQL Tutorial - Full Database Course for Beginners (Offered through `freecodecamp`)](https://youtu.be/HXV3zeQKqGY?si=kXKxJS0quRQYpZoPs)
+
+The rest of the material in SQL 101 is devoted to teaching you the basics of SQL querying that can be applied to just about any version of the language you may encounter.

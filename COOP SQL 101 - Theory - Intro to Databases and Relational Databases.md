@@ -24,7 +24,7 @@ A database is simply an organized collection of structured data that is stored e
 
 While they will not be covered in this course, we must mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases as well. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
 
-A popular feature of relational databases is the language that is used to manage them, **Structured Query Language (`SQL`)**. Unlike relational databases, NoSQL databases - as you might expect from the name - either do not use SQL or don't *just use* SQL. 
+A popular feature of relational databases is the language that is used to manage them, **Structured Query Language (SQL)**. Unlike relational databases, NoSQL databases - as you might expect from the name - either do not use SQL or don't *just use* SQL. 
 
 ### B. **What are relational databases?**
 
@@ -82,13 +82,15 @@ In relational databases, our data is stored in a tabular structure called a rela
 
 **Each table typically represents an "entity" or some "thing" we would like to model**. Using our ERD example from earlier, an `Apprentice` would be considered an entity. 
 
-**Columns represent attributes about an entity**. Continuing with our example, some attributes of an `Apprentice` includes their name and their cohort ID. 
+**Columns represent attributes about an entity**. Continuing with our example, some attributes of an `Apprentice` includes their `FirstName` and their `CohortID`. 
 
 **Rows each represent a single entity record for the table**. In the Apprentices table, each row would represent one Apprentice. 
 
 The structure of tables in a relational database is similar to how we arrange data in spreadsheets (like Excel.)
 
 #### **Data Types and Structure**
+
+![Common SQL Data Types](assets/data-types.png)
 
 **Attributes of an entity have both a type (the kind of data it is) and a value (the data itself.)** For example, the `FirstName` attribute for the `Apprentice` table is text data, so we would consider "text" to be its data type, and a possible value could be "Angela". The data type is very important because columns will only support one data type each. In Excel, you are allowed to input any type of data in a column that you would like - one cell of a column can have a number and the next cell in that same column can have a text value. However, that is where SQL and Excel differ. 
 
@@ -147,6 +149,8 @@ Normalization, denormalization, OLTP, and OLAP are all concepts that go much dee
 - [When and How You Should Denormalize a Relational Database](https://www.linkedin.com/pulse/when-how-you-should-denormalize-relational-database-pathuri/)
 
 #### **Relational Database Management System (RDBMS)**
+
+![Top 6 Most Popular RDBMS Systems in 2023](assets/rdbms.png)
 
 Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data on a device. There are quite a few different RDBMS's out there, such as **Postgresql, MySQL, Oracle and SQL Server**. An important thing to note is that each RDBMS uses a slightly different version of SQL (these are called *dialects*.) This means that the syntax can be different for some queries between SQL Server and Postgres, for example. 
 

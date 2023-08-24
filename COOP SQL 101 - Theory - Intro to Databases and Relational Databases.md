@@ -14,6 +14,8 @@ We hope that you come away from this class (as well as the subsequent 102 class)
 
 ## **Databases & Relational Database Concepts**
 
+![Databases](assets/databases.png)
+
 ### **A. What are databases?**
 
 **Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function. But what is a database exactly?
@@ -49,10 +51,7 @@ Let's imagine we have two tables, `Table A` and `Table B`, that are related:
 - **`One-to-Many`**: One row in `Table A` can be matched to one or more rows in `Table B`. A real-life example would be the relationship between the `ProgramManager` and `Captain` tables, where one Program Manager supervises many captains, but each captain reports to just one Program Manager.
 - **`Many-to-Many`**: One or more rows in `Table A` can be matched to one or more rows in `Table B`. An example of this is the relationship between the `Apprentice` and `Captain` tables - each `Captain` has multiple Apprentices and each `Apprentice` has multiple Captains.  
 
-<details>
-<summary>Click to see a visual representation of Crow's Foot Notation and Relationship Types</summary>
-<img src="assets/crows-foot.png" alt="Crow's Foot Notation Example">
-</details>
+![Crows Foot Notation Example](assets/crows-foot.png)
 
 ---
 
@@ -162,10 +161,7 @@ SQL can be further divided into five sub-languages, each of which contains comma
 - **Data Control Language (DCL)**: Used for granting or modifying access to data stored in tables. Common DCL commands include `GRANT` and `REVOKE`.
 - **Transaction Control Language (TCL)**: Used for controlling transactions in the database. Common TCL commands include `COMMIT`, `SAVEPOINT`, and `ROLLBACK`.
 
-<details>
-    <summary>Click here to see a complete listing of the SQL commands found in each sub-language</summary>
-    <img src="assets/sql-sub-languages.png" alt="Listing of SQL commands found in each sub-language: DDL, DML, DQL, DCL, and TCL">
-</details>
+![SQL Sub-languages](assets/sql-sub-languages.png)
 
 ### What's next?
 

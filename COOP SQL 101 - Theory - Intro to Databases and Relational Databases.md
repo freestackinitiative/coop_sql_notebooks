@@ -124,7 +124,7 @@ While there are still instances where data is stored exclusively in spreadsheets
 
 These are the main reasons for using an RDBMS to store data over a spreadsheet. However, there are exceptions where storing data in a spreadsheet may be preferable, such as when the data you need to store is relatively small, it doesn't need to be updated, and it doesn't need to be kept particularly secure. All in all, the decision of what storage method to use should always be tied back to your needs and use case(s). 
 
-### **What is SQL?**
+## **What is SQL?**
 
 **Structured Query Language (SQL - pronounced *"Sequel"*)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
 

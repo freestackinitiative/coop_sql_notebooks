@@ -104,38 +104,37 @@ The normalization method is typically used in **Online Transactional Processing 
 
 As data analysts, you may work with databases that are either OLTP or OLAP systems. The most common system used for data analytics is OLAP, which often models data in what are known as data warehouses. Data Warehouses combine data from multiple sources within a business to create a unified, holistic view of the data for reporting and analysis. This is a topic that books are devoted to and is out of the scope of what we will cover in our class. [This article](https://www.oracle.com/database/what-is-a-data-warehouse/) expands on the concept further.  
 
-Normalization, denormalization, OLTP, and OLAP are all concepts that go much deeper than the treatment given here. For our purposes, we will not dive into this further. However, if you would like to learn more, here are some resources you can use:
+Normalization, denormalization, OLTP, and OLAP are all concepts that go much deeper than the treatment given here. For our purposes, we will not dive into these topics further. However, if you would like to learn more, here are some resources we recommend:
 
 - [OLTP vs OLAP](https://aws.amazon.com/compare/the-difference-between-olap-and-oltp/)
 - [Normalization vs Denormalization](https://medium.com/analytics-vidhya/database-normalization-vs-denormalization-a42d211dd891#:~:text=Normalization%20is%20the%20technique%20of,to%20make%20data%20retrieval%20faster.)
 
 #### **Relational Database Management System (RDBMS)**
 
-Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data. There are quite a few different RDBMS's out there, such as **Postgresql, MySQL, Oracle and SQL Server**. An important thing to note is that each RDBMS uses a slightly different version of SQL, so the syntax can be different for some queries between SQL Server and Postgres, for example. 
+Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data on a device. There are quite a few different RDBMS's out there, such as **Postgresql, MySQL, Oracle and SQL Server**. An important thing to note is that each RDBMS uses a slightly different version of SQL (these are called *dialects*.) This means that the syntax can be different for some queries between SQL Server and Postgres, for example. 
 
 **Why use a Relational Database instead of just working with data in Excel (or a similar spreadsheet software)?**
 
-While there are still instances where data is stored exclusively in spreadsheets, this is becoming less and less common. And once a business reaches a certain size, using a database is a necessity. Here are a few reasons why:
+While there are still instances where data is stored exclusively in spreadsheets, this is becoming less and less common. As the amount of data to be analyzed grows, using a database eventually becomes a necessity. Here are a few reasons why:
 
-1. **RDBMS's can store much more information than spreadsheets can.** Excel, for example, has hard limits on the number of rows and columns that can be stored in both a single sheet as well as a workbook. Even if you are below these limits, Excel can become difficult to use once you are working with larger data sets (think hundreds of thousands 
-to a million rows.)
+1. **RDBMS's can store much more information than spreadsheets can.** Excel, for example, has hard limits on the number of rows and columns that can be stored in both a single sheet as well as a workbook. Even if you are below these limits, Excel can become difficult to use once you are working with larger data sets (think hundreds of thousands to a million or more rows.)
 2. **RDBMS's allow for many people to collaborate and use the same data source all at once.** While you can share Excel workbooks with one another and even work collaboratively, once you get to more than a handful of people working on updating the same document the process quickly becomes unwieldy. Conflicts begin to creep up more and more often, and there is a good chance that work can be lost or overwritten easily, costing hours of productivity. This is not an issue with RDBMS's as they are designed to handle many people using them all at once.
-3. **Relational Databases and RDBMS's help ensure the integrity and structure of the data.** This is critical when data is updated on a regular basis. Excel does not have mechanisms built in to guarantee the integrity and structure of the data (e.g. Are the data types of each column consistent?)
-4. **RDBMS's provide more security for your data than spreadsheets.** While it is possible to encrypt Excel workbooks, these are not robust against a determined attacker. On the other hand, RDBMS's have access control capabilities built-in which allow you to control who has access to what data and what level of access they should have. They are far more robust to security issues than spreadsheets.
+3. **Relational Databases and RDBMS's help ensure the integrity and structure of the data.** This is critical when data is updated on a regular basis. Excel does not have any mechanisms built-in to guarantee the integrity and structure of the data.
+4. **RDBMS's provide more security for your data than spreadsheets.** While it is possible to encrypt spreadsheets, these methods are not robust against a determined attacker. On the other hand, RDBMS's have access control capabilities built-in, which allow you to control who has access to what data and what level of access they should have. They are generally more secure than spreadsheets.
 
 These are the main reasons for using an RDBMS to store data over a spreadsheet. However, there are exceptions where storing data in a spreadsheet may be preferable, such as when the data you need to store is relatively small, it doesn't need to be updated, and it doesn't need to be kept particularly secure. All in all, the decision of what storage method to use should always be tied back to your needs and use case(s). 
 
 ### **What is SQL?**
 
-**Structured Query Language (SQL - pronounced *"Sequel"*)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and maintaining a RDBMS.
+**Structured Query Language (SQL - pronounced *"Sequel"*)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
 
-SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing the results that we want rather than describing, step-by-step, how the RDBMS should retrieve the data. Since it is declarative, writing queries can feel more intuitive and the syntax is relatively simple, making SQL a beginner-friendly language. 
+SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing what data we want rather than describing, step-by-step, how the RDBMS should retrieve that data. The syntax is relatively simple to learn and writing queries can feel more intuitive which makes SQL a beginner-friendly language. 
 
-Another important point to reiterate is that SQL itself is just a specification. **Different RDBMS vendors create their own versions of SQL** based on that specification. This is why the syntax between the SQL for one RDBMS will differ (albeit slightly) from that of another RDBMS system. In practice, this means that you should always be aware of what RDBMS you are using so that you know which set of documentation you would need to use.
+Another important point to reiterate is that SQL itself is just a specification. **Different RDBMS vendors implement their own versions of SQL** based on that specification. This is why the syntax between the SQL for one RDBMS will differ (albeit slightly) from that of another RDBMS system. In practice, this means that you should always be aware of what RDBMS you are using so that you know what language features are available to you (and what documentation to use.)
 
 **SQL Sub-languages**
 
-SQL can be further divided into five sub-languages, each of which contains commands for specific tasks such as creating databases, manipulating data, or querying data. Of the five, we will primarily focus on the Data Query Language (DQL). The five sub-languages are, in no particular order:
+SQL can be further divided into five sub-languages, each of which contains commands for specific tasks like creating databases or manipulating and querying data. Of these five, we will focus on the Data Query Language (DQL). The five sub-languages are, in no particular order:
 - **Data Defintion Language (DDL)**: Used for creating or modifying the structure of tables or databases. Common DDL commands include `CREATE`, `DROP`, or `ALTER`
 - **Data Manipulation Language (DML)**: Used for manipulating data that is already stored in the database, typically by either adding, removing, or updating the data. Common DML commands include `INSERT`, `UPDATE`, and `DELETE`.
 - **Data Query Language (DQL)**: Used for querying data in the database. DQL is where the `SELECT` command comes from.
@@ -149,7 +148,7 @@ SQL can be further divided into five sub-languages, each of which contains comma
 
 ### What's next?
 
-We have only scratched the surface of the topics that were introduced here. And there are yet more topics that we are not covering in here because to include and properly explain them all would require at least a semesters worth of time. However, as promised, there are other resources that we encourage you to utilize to further your studies and knowledge on databases. Here are some that we recommend:
+We have only scratched the surface of the topics that were introduced here. There is so much more to cover, but doing so could fill up at least a semester or more. However, there are many free resources that you can use to dive deeper into databases and SQL. Here are some external resources that we encourage you to use to enhance your studies:
 
 - [Database Systems - Full Course from Cornell University (Offered through `freecodecamp`)](https://youtu.be/4cWkVbC2bNE?si=YiIIUs7E1ShmJRgc)
 - [Database vs Data Warehouse vs Data Lake (Alex the Analyst)](https://youtu.be/4cWkVbC2bNE?si=YiIIUs7E1ShmJRgc)
@@ -157,4 +156,4 @@ We have only scratched the surface of the topics that were introduced here. And 
 - [Primary Keys and Foreign Keys Explained](https://youtu.be/B5r8CcTUs5Y?si=asEl57bsIEVpghrE)
 - [SQL Tutorial - Full Database Course for Beginners (Offered through `freecodecamp`)](https://youtu.be/HXV3zeQKqGY?si=kXKxJS0quRQYpZoPs)
 
-The rest of the material in SQL 101 is devoted to teaching you the basics of SQL querying that can be applied to just about any version of the language you may encounter.
+The rest of the material in SQL 101 is devoted to helping you master the basics of SQL querying. These skills will be applicable to just about any version of the language you may encounter.

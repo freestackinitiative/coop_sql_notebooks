@@ -142,7 +142,10 @@ SQL can be further divided into five sub-languages, each of which contains comma
 - **Data Control Language (DCL)**: Used for granting or modifying access to data stored in tables. Common DCL commands include `GRANT` and `REVOKE`.
 - **Transaction Control Language (TCL)**: Used for controlling transactions in the database. Common TCL commands include `COMMIT`, `SAVEPOINT`, and `ROLLBACK`.
 
-![SQL Sub-languages: DDL, DML, DQL, DCL, and TCL](assets/sql-sub-languages.png)
+<details>
+    <summary>Click here to see a complete listing of the SQL commands found in each sub-language</summary>
+    <img src="assets/sql-sub-languages.png" alt="Listing of SQL commands found in each sub-language: DDL, DML, DQL, DCL, and TCL">
+</details>
 
 ### What's next?
 

@@ -16,7 +16,7 @@ We hope that you come away from this class (as well as the subsequent 102 class)
 
 ### **A. What are databases?**
 
-**Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function without them. But what is a database exactly?
+**Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
 A database is simply an organized collection of structured data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on the most popular type - **the relational database**. 
 

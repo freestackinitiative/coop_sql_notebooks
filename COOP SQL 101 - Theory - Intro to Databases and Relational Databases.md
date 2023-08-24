@@ -129,7 +129,7 @@ These are the main reasons for using an RDBMS to store data over a spreadsheet. 
 
 **Structured Query Language (SQL - pronounced *"Sequel"*)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and maintaining a RDBMS.
 
-SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing the results that we want rather than describing, step-by-step, how the RDBMS should retrieve the data. Since it is declarative, SQL can feel easier to understand because the syntax is relatively simple and queries can be easy to rationalize about.
+SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing the results that we want rather than describing, step-by-step, how the RDBMS should retrieve the data. Since it is declarative, writing queries can feel more intuitive and the syntax is relatively simple, making SQL a beginner-friendly language. 
 
 Another important point to reiterate is that SQL itself is just a specification. **Different RDBMS vendors create their own versions of SQL** based on that specification. This is why the syntax between the SQL for one RDBMS will differ (albeit slightly) from that of another RDBMS system. In practice, this means that you should always be aware of what RDBMS you are using so that you know which set of documentation you would need to use.
 

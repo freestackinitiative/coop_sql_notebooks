@@ -157,10 +157,6 @@ Answer the questions below to check your understanding of what we have covered s
 
 **Metadata is a set of data that describes another set of data**. Since schemas describe either tables or databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information to help in your analysis.
 
-Here are some of the different types of metadata:
-
-![Types of Metadata](assets/metadata-types.png)
-
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 
 Normalization and denormalization are data modeling methods that have different goals for data storage and retrieval. **Normalization is used when we want to ensure the consistency and integrity of the data by eliminating redundancy (e.g. duplicate values.)** This is achieved by dividing the tables into smaller sub-tables until redundant data are eliminated. **Denormalization, on the other hand, favors easier querying of the data and achieves this by combining data/tables together, even if it may introduce redundancy.**

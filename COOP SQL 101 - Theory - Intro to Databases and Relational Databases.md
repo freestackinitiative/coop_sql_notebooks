@@ -20,7 +20,7 @@ We hope that you come away from this class (as well as the subsequent 102 class)
 
 **Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
-A database is simply an organized collection of structured data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
+A database is simply an organized collection of data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
 
 While they will not be covered in this course, we must mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases as well. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
 
@@ -59,14 +59,21 @@ Let's imagine we have two tables, `Table A` and `Table B`, that are related:
 
 Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
 
-*1. What are some of the differences between relational databases and NoSQL databases?*
+*1. What is a database?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>A database is an organized collection of data stored electronically.</p>
+</details>
+</br>
+
+*2. What are some of the differences between relational databases and NoSQL databases?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>Relational databases use SQL exclusively for management where NoSQL databases either don't use SQL at all or don't just use SQL; Relational databases impose structure on data. NoSQL databases typically deal with semi-structured or unstructured data.</p>
 </details>
 </br>
 
-*2. What type of relationship is modeled between the entities in our COOP Program ERD?*
+*3. What type of relationship is modeled between the entities in our COOP Program ERD?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>The relationships in our chart are all One-to-Many relationships. This is denoted by the use of the crow's foot notation on only one side of our line connecting the entities. Learn more about crow's foot notation <a href="https://vertabelo.com/blog/crow-s-foot-notation/" target="_blank">here</a>.</p>
@@ -114,6 +121,34 @@ Understanding these relationships is important when we want to combine data from
 
 Here are some more resources on [Primary Keys](https://www.w3schools.com/sql/sql_primarykey.asp) and [Foreign Keys](https://www.w3schools.com/sql/sql_foreignkey.asp).
 
+---
+
+**<em>Comprehension Check</em>**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What do tables, columns, and rows represent in a relational database?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Tables represent entities or things in a database. Columns are part of a table and represent the attributes of an entity. Rows each represent one record of an entity in a given table.</p>
+</details>
+</br>
+
+*2. What role do data types play in structuring data in a relational database?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Data Types are used to help ensure that the data in a column are all consistent.</p>
+</details>
+</br>
+
+*3. What is the difference between a primary key and a foreign key?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Primary Keys are used to identify unique rows in a table. Foreign Keys are used to formally establish relationships between tables in the database. Often, a foreign key will establish a relationship with a primary key in another table.</p>
+</details>
+
+---
+
 #### **Schemas and Metadata**
 
 ![Schemas in the COOP ERD](assets/schemas.png)
@@ -147,6 +182,34 @@ Normalization, denormalization, OLTP, and OLAP are all concepts that go much dee
 - [OLTP vs OLAP](https://aws.amazon.com/compare/the-difference-between-olap-and-oltp/)
 - [Normalization vs Denormalization](https://medium.com/analytics-vidhya/database-normalization-vs-denormalization-a42d211dd891#:~:text=Normalization%20is%20the%20technique%20of,to%20make%20data%20retrieval%20faster.)
 - [When and How You Should Denormalize a Relational Database](https://www.linkedin.com/pulse/when-how-you-should-denormalize-relational-database-pathuri/)
+
+---
+
+**<em>Comprehension Check</em>**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What is the difference between a table schema and a database schema?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>The table schema provides metadata about a specific table, such as the name, the column names, and their data types. The database schema provides metadata about the database as a whole, including the names of the tables that are in it.</p>
+</details>
+</br>
+
+*2. When do we use denormalization to store our data in a database?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Denormalization is used when we want to focus on querying and analyzing historical data.</p>
+</details>
+</br>
+
+*3. What is the difference between OLTP and OLAP Systems? As a Data Analyst, which type of system are you more likely to work in?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>OLTP Systems focus more on real-time business processes and applications. OLAP Systems focus on making historical data easily available for querying and analysis. As Data Analysts, you may work with both systems, but are more likely to work in an OLAP system.</p>
+</details>
+
+---
 
 #### **Relational Database Management System (RDBMS)**
 
@@ -183,6 +246,35 @@ SQL can be further divided into five sub-languages, each of which contains comma
 - **Transaction Control Language (TCL)**: Used for controlling transactions in the database. Common TCL commands include `COMMIT`, `SAVEPOINT`, and `ROLLBACK`.
 
 ![SQL Sub-languages](assets/sql-sub-languages.png)
+
+
+---
+
+**<em>Comprehension Check</em>**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What does SQL stand for?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Structured Query Language.</p>
+</details>
+</br>
+
+*2. When would we use a Relational Database Management System? When would it be best to just use a spreadsheet?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>We would use a Relational Database Management System when we are working with a lot of data that is consistently updated and need to have a lot of people work on that data simultaneously. However, when you don't need a lot of people to work on the data and it is not updated very often (or at all) then a spreadsheet is sufficient.</p>
+</details>
+</br>
+
+*3. Which sub-language of SQL will we be focused on for the purpose of writing queries?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Data Query Language (DQL).</p>
+</details>
+
+---
 
 ### What's next?
 

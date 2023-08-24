@@ -76,6 +76,8 @@ Answer the questions below to check your understanding of what we have covered s
 
 #### **Tables, Columns, and Rows**
 
+![Tables, columns, and rows delineated in a chart](assets/tables-columns-rows.png)
+
 In relational databases, our data is stored in a tabular structure called a relation. However, it is much more common to refer to relations as tables, so going forward, we will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
 
 **Each table typically represents an "entity" or some "thing" we would like to model**. Using our ERD example from earlier, an `Apprentice` would be considered an entity. 
@@ -115,6 +117,10 @@ Here are some more resources on [Primary Keys](https://www.w3schools.com/sql/sql
 **Schemas can be a little confusing at first because the term can be used to refer one of two things: the structure of a table or the structure of a database**. When we talk about the schema of a table, we are referring to the table's name as well as the structure of the table, such as the column names and their data types. However, when referring to the structure of a database, the schema describes the tables (e.g. tables names) that are in the database. **So we really have two types of schemas: table schemas and database schemas**. When you hear the word "schema", it could potentially mean either one of these, so it's important to understand the context in which it is mentioned; **when in doubt, clarify whether the table or database schema is being referred to.** 
 
 **Metadata is a set of data that describes another set of data**. Since schemas describe either tables or databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information to help in your analysis.
+
+Here are some of the different types of metadata:
+
+![Types of Metadata](assets/metadata-types.png)
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 

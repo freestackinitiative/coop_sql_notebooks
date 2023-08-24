@@ -32,7 +32,7 @@ A popular feature of relational databases is the language that is used to manage
 
 We just introduced databases as well as relational databases, and discussed how they differ from NoSQL databases. But what exactly is a relational database?
 
-Simply put, **a relational database is a type of database that stores information in tables which are related (or connected) to one another**. It's good to visualize what we mean by relationships between tables, so let's introduce you to the **Entity Relationship Diagram (ERD)**. ERD's represent a database by modeling the relationships between different entities, or *tables* like so:
+Simply put, **a relational database is a type of database that stores information in tables which are related (or connected) to one another**. It's good to visualize what we mean by relationships between tables, so let's introduce you to the **Entity Relationship Diagram (ERD)**. ERD's represent a database by modeling the relationships between different entities, or *tables*, like so:
 
 ![COOP ERD](assets/COOP_ERD.png)
 

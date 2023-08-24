@@ -8,7 +8,7 @@ Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, 
 
 First, we'll start by providing an overview of the theory and concepts behind relational databases. Then we introduce you to SQL, the language of data. We teach you how to write basic data retrieval queries, as well as how to process and summarize data. 
 
-The content that we cover here is typically delivered over the course of an entire semester at most universities. Our aim is to introduce you to the important concepts that you'll need to know to be effective in your roles. This means that we will not go into much depth when it comes to theory. To help enhance your study, where possible, we include links to external resources that cover those topics at length.
+The content that we cover here is typically delivered over the course of an entire semester at most universities. Our aim is to introduce you to the important concepts that you'll need to know to be effective in your roles. This means that we will not go into much depth when it comes to theory. We include links to external resources that cover those topics at length to help enhance your study.
 
 We hope that you come away from this class (as well as the subsequent 102 class) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
 
@@ -18,9 +18,9 @@ We hope that you come away from this class (as well as the subsequent 102 class)
 
 **Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
-A database is simply an organized collection of structured data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on the most popular type - **the relational database**. 
+A database is simply an organized collection of structured data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
 
-While they will not be covered in this course, we must mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be considered databases that are not structured like a relational database. They typically deal with semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases as well, but we won't be covering them here. However, if you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
+While they will not be covered in this course, we must mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases as well. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
 
 A popular feature of relational databases is the language that is used to manage them, **Structured Query Language (`SQL`)**. Unlike relational databases, NoSQL databases - as you might expect from the name - either do not use SQL or don't *just use* SQL. 
 
@@ -30,19 +30,19 @@ A popular feature of relational databases is the language that is used to manage
 
 #### **Entity Relationship Diagrams (ERD)**
 
-We just introduced databases as well as relational databases, and discussed how they differ from NoSQL databases. But what exactly is a relational database?
+We just introduced databases, as well as relational databases, and discussed how they differ from NoSQL databases. But what exactly is a relational database?
 
-Simply put, **a relational database is a type of database that stores information in tables which are related (or connected) to one another**. It's good to visualize what we mean by relationships between tables, so let's introduce you to the **Entity Relationship Diagram (ERD)**. ERD's represent a database by modeling the relationships between different entities, or *tables*, like so:
+Simply put, **a relational database is a type of database that stores information in tables which are related (or connected) to one another**. It's good to visualize what we mean by relationships between tables, so let's introduce you to the **Entity Relationship Diagram (ERD)**. ERD's are used to represent a database by modeling the relationships between different entities, or *tables*, using a type of flowchart like the one shown below:
 
 ![COOP ERD](assets/COOP_ERD.png)
 
-The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each show which ones are connected. The marks at the end of a line, known as the "Crow's Feet", indicate the type of relationship between two tables. Each table has a name and inside of the box are the attributes/column names along with their data types. We'll cover more about columns and data types a little later on.
+The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each show which ones are connected. The marks at the end of a line, known as the "Crow's Foot", indicate the type of relationship between two tables. Each table has a name and inside of the box are the attributes/column names along with their data types. We'll cover more about columns, data types, and relationships a little later on.
 
 As you can see, each of the roles in COOP (Captain, Program Manager, and Student) are represented by a table. Captains and Program Managers (PMs) are connected directly to one another since PMs are their supervisors. Then we see that Apprentices connected to the Cohort, just as you are an apprentice who are assigned to one cohort. Finally, the Cohort is the glue that connects the Captains to Apprentices (and by extension the PMs.)
 
 #### **Types of Relationships**
 
-Earlier, we mentioned that the "Crow's Feet" notation indicated the type of relationship between the two tables. In relational databases, **the type of the relationship between two tables indicates how the rows in one table are related to the rows in another**. This is an important consideration when designing databases as well as when you want to combine the data in two or more tables. **There are three main types of relationships: `One-to-One`, `One-to-Many`, and `Many-to-Many`**. 
+Earlier, we mentioned that the "Crow's Foot" notation indicated the type of relationship between the two tables. In relational databases, **the type of the relationship between two tables indicates how the rows in one table are related to the rows in another**. This is an important consideration when designing databases, as well as when you want to combine the data in two or more tables. **There are three main types of relationships: `One-to-One`, `One-to-Many`, and `Many-to-Many`**.
 
 Let's imagine we have two tables, `Table A` and `Table B`, that are related:
 - **`One-to-One`**: This means that exactly one row in `Table A` is related to exactly one (and only one) row in `Table B`. An example of this type of relationship would be between a user and their password - one user should have, at most, one password.
@@ -54,9 +54,30 @@ Let's imagine we have two tables, `Table A` and `Table B`, that are related:
 <img src="assets/crows-foot.png" alt="Crow's Foot Notation Example">
 </details>
 
+---
+
+**<em>Comprehension Check</em>**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What are some of the differences between relational databases and NoSQL databases?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Relational databases use SQL exclusively for management where NoSQL databases either don't use SQL at all or don't just use SQL; Relational databases impose structure on data. NoSQL databases typically deal with semi-structured or unstructured data.</p>
+</details>
+</br>
+
+*2. What type of relationship is modeled between the entities in our COOP Program ERD?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>The relationships in our chart are all One-to-Many relationships. This is denoted by the use of the crow's foot notation on only one side of our line connecting the entities. Learn more about crow's foot notation <a href="https://vertabelo.com/blog/crow-s-foot-notation/" target="_blank">here</a>.</p>
+</details>
+
+---
+
 #### **Tables, Columns, and Rows**
 
-In relational databases, our data is stored in a tabular structure (a.k.a. a "table") called a relation. However, it is much more common to refer to relations as tables, so going forward, when will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
+In relational databases, our data is stored in a tabular structure called a relation. However, it is much more common to refer to relations as tables, so going forward, we will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
 
 **Each table typically represents an "entity" or some "thing" we would like to model**. Using our ERD example from earlier, an `Apprentice` would be considered an entity. 
 
@@ -126,7 +147,7 @@ These are the main reasons for using an RDBMS to store data over a spreadsheet. 
 
 ## **What is SQL?**
 
-**Structured Query Language (SQL - pronounced *"Sequel"*)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
+**Structured Query Language (SQL - pronounced <em>"Sequel"</em>)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
 
 SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing what data we want rather than describing, step-by-step, how the RDBMS should retrieve that data. The syntax is relatively simple to learn and writing queries can feel more intuitive which makes SQL a beginner-friendly language. 
 

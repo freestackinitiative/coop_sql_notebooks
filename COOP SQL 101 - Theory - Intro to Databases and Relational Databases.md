@@ -114,6 +114,8 @@ Here are some more resources on [Primary Keys](https://www.w3schools.com/sql/sql
 
 #### **Schemas and Metadata**
 
+![Schemas in the COOP ERD](assets/schemas.png)
+
 **Schemas can be a little confusing at first because the term can be used to refer one of two things: the structure of a table or the structure of a database**. When we talk about the schema of a table, we are referring to the table's name as well as the structure of the table, such as the column names and their data types. However, when referring to the structure of a database, the schema describes the tables (e.g. tables names) that are in the database. **So we really have two types of schemas: table schemas and database schemas**. When you hear the word "schema", it could potentially mean either one of these, so it's important to understand the context in which it is mentioned; **when in doubt, clarify whether the table or database schema is being referred to.** 
 
 **Metadata is a set of data that describes another set of data**. Since schemas describe either tables or databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information to help in your analysis.
@@ -124,9 +126,17 @@ Here are some of the different types of metadata:
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 
-Normalization and denormalization are data modeling methods that have different goals for data storage and retrieval. **Normalization is used when we want to ensure the consistency and integrity of the data by eliminating redundancy (e.g. duplicate values.)** This is achieved by dividing the tables into smaller sub-tables until redundant data are eliminated. **Denormalization, on the other hand, favors easier querying of the data and achieves this by combining data/tables together, even if it introduces redundancy.**
+Normalization and denormalization are data modeling methods that have different goals for data storage and retrieval. **Normalization is used when we want to ensure the consistency and integrity of the data by eliminating redundancy (e.g. duplicate values.)** This is achieved by dividing the tables into smaller sub-tables until redundant data are eliminated. **Denormalization, on the other hand, favors easier querying of the data and achieves this by combining data/tables together, even if it may introduce redundancy.**
 
-The normalization method is typically used in **Online Transactional Processing (OLTP) systems, which are use to model real-time transactions, favoring (write) speed, consistency, and data integrity**. Relational databases are used to create this model because of the strong emphasis on structure. **Online Analytical Processing (OLAP) systems, which generally use a denormalized structure for data, are used when querying and analyzing the data is more important than being able to store data quickly and without redundancy**. OLAP systems can be built using relational databases but may also be built using other types of databases.
+![Normalization vs Denormalization](assets/normalized-denormalized.png)
+
+The normalization method is typically used in **Online Transactional Processing (OLTP) systems, which are use to model real-time transactions, favoring (write) speed, consistency, and data integrity**. Relational databases are used to create this model because of the strong emphasis on structure. OLTP typically has a focus on business-critical applications, meaning items that need to be processed and recorded in real-time. Examples of this kind of processing would be managing inventory in a warehouse or credit card transactions. Data in these databases are not usually kept for very long, so there is little historical data generally available in these systems.
+
+**Online Analytical Processing (OLAP) systems, which generally use a denormalized structure for data, are used when querying and analyzing the data is more important than being able to store data quickly and without redundancy**. OLAP systems can be built using relational databases but may also be built using other types of databases. These systems are used for information mining and gathering insights for a business. They typically store much more data than OLTP systems as it is essentially an archive of historical data that is continuously added to. Very often, the data source for an OLAP system will be the data from an OLT System.
+
+The diagram below shows a high-level breakdown of how OLTP and OLAP systems are used:
+
+![OLTP and OLAP systems](assets/oltp-olap.png)
 
 As data analysts, you may work with databases that are either OLTP or OLAP systems. The most common system used for data analytics is OLAP, which often models data in what are known as data warehouses. Data Warehouses combine data from multiple sources within a business to create a unified, holistic view of the data for reporting and analysis. This is a topic that books are devoted to and is out of the scope of what we will cover in our class. [This article](https://www.oracle.com/database/what-is-a-data-warehouse/) expands on the concept further.  
 
@@ -134,6 +144,7 @@ Normalization, denormalization, OLTP, and OLAP are all concepts that go much dee
 
 - [OLTP vs OLAP](https://aws.amazon.com/compare/the-difference-between-olap-and-oltp/)
 - [Normalization vs Denormalization](https://medium.com/analytics-vidhya/database-normalization-vs-denormalization-a42d211dd891#:~:text=Normalization%20is%20the%20technique%20of,to%20make%20data%20retrieval%20faster.)
+- [When and How You Should Denormalize a Relational Database](https://www.linkedin.com/pulse/when-how-you-should-denormalize-relational-database-pathuri/)
 
 #### **Relational Database Management System (RDBMS)**
 

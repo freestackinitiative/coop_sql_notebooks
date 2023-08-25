@@ -4,21 +4,22 @@ By: Martin Arroyo
 
 ### Table of Contents:
 
-[**Introduction**](#introduction)
-[**Databases & Relational Database Concepts**](#databases--relational-database-concepts)
-- [**What are databases?**](#what-are-databases)
-- [**What are relational databases?**](#what-are-relational-databases)
-    - [**Entity Relationship Diagrams (ERD)**](#entity-relationship-diagrams-erd)
-    - [**Types of Relationships**](#types-of-relationships)
-    - [**Tables, Columns, and Rows**](#tables-columns-and-rows)
-    - [**Data Types and Structure**](#data-types-and-structure)
-    - [**Keys to Establishing Relationships - Primary Keys and Foreign Keys**](#keys-to-establishing-relationships---primary-keys-and-foreign-keys)
-    - [**Schemas and Metadata**](#schemas-and-metadata)
-    - [**Normalization, Denormalization, and OLTP vs OLAP**](#normalization-denormalization-and-oltp-vs-olap)
-    - [**Relational Database Management System (RDBMS)**](#relational-database-management-system-rdbms)
+* [**Introduction**](#introduction)
 
-[**What is SQL?**](#what-is-sql)
-- [**SQL Sub-languages**](#sql-sub-languages)
+* [**Databases & Relational Database Concepts**](#databases--relational-database-concepts)
+    - [**What are databases?**](#what-are-databases)
+    - [**What are relational databases?**](#what-are-relational-databases)
+        - [**Entity Relationship Diagrams (ERD)**](#entity-relationship-diagrams-erd)
+        - [**Types of Relationships**](#types-of-relationships)
+        - [**Tables, Columns, and Rows**](#tables-columns-and-rows)
+        - [**Data Types and Structure**](#data-types-and-structure)
+        - [**Keys to Establishing Relationships - Primary Keys and Foreign Keys**](#keys-to-establishing-relationships---primary-keys-and-foreign-keys)
+        - [**Schemas and Metadata**](#schemas-and-metadata)
+        - [**Normalization, Denormalization, and OLTP vs OLAP**](#normalization-denormalization-and-oltp-vs-olap)
+        - [**Relational Database Management System (RDBMS)**](#relational-database-management-system-rdbms)
+
+* [**What is SQL?**](#what-is-sql)
+    - [**SQL Sub-languages**](#sql-sub-languages)
 
 ## **Introduction**
 

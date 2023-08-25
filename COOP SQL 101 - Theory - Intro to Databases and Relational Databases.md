@@ -2,6 +2,24 @@
 
 By: Martin Arroyo
 
+### Table of Contents:
+
+[**Introduction**](#introduction)
+[**Databases & Relational Database Concepts**](#databases--relational-database-concepts)
+- [**What are databases?**](#what-are-databases)
+- [**What are relational databases?**](#what-are-relational-databases)
+    - [**Entity Relationship Diagrams (ERD)**](#entity-relationship-diagrams-erd)
+    - [**Types of Relationships**](#types-of-relationships)
+    - [**Tables, Columns, and Rows**](#tables-columns-and-rows)
+    - [**Data Types and Structure**](#data-types-and-structure)
+    - [**Keys to Establishing Relationships - Primary Keys and Foreign Keys**](#keys-to-establishing-relationships---primary-keys-and-foreign-keys)
+    - [**Schemas and Metadata**](#schemas-and-metadata)
+    - [**Normalization, Denormalization, and OLTP vs OLAP**](#normalization-denormalization-and-oltp-vs-olap)
+    - [**Relational Database Management System (RDBMS)**](#relational-database-management-system-rdbms)
+
+[**What is SQL?**](#what-is-sql)
+- [**SQL Sub-languages**](#sql-sub-languages)
+
 ## **Introduction**
 
 Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, we will cover some of the highlights of the theory behind relational databases as well as introduce you to common SQL query patterns and concepts that you should know to be successful in many analytics roles. The focus of this class is to provide you with a foundational framework to understand how databases work, their importance in today's digital world, and how these concepts are applied on-the-job.
@@ -12,11 +30,13 @@ The content that we cover here is typically delivered over the course of an enti
 
 You will come away from this class (as well as the subsequent 102 class) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
 
+[Back to top](#table-of-contents)
+
 ## **Databases & Relational Database Concepts**
 
 ![Databases](assets/databases.png)
 
-### **A. What are databases?**
+### **What are databases?**
 
 **Databases** are ubiquitous in today's world. Every day, we interact with many different databases, whether when checking our phones for updates on our favorite applications or when we go to the store and buy things. Without them, we would not be able to store information for very long, and much of the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
@@ -32,7 +52,9 @@ A popular feature of relational databases is the language that is used to manage
 >
 >An interesting thing to note is that for these newer architectures, there is a common language that is being used to query and manipulate the data in them - SQL! While they are not relational databases, SQL has become so ubiquitous that designers of these systems made sure that it was a key component. That's one of the reasons why SQL is a critical skill for any data professional! 
 
-### B. **What are relational databases?**
+[Back to top](#table-of-contents)
+
+### **What are relational databases?**
 
 [Here is an optional video](https://youtu.be/NvrpuBAMddw?si=L0Cl9VrACEKoh6gR) that gives you a brief overview of Relational Databases. It may be helpful to watch this short video first, then continue on with the rest of this reading.
 
@@ -47,6 +69,8 @@ Simply put, **a relational database is a type of database that stores informatio
 The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each entity shows which ones are connected. The marks at the end of a line, known as the "Crow's Foot", indicate the type of relationship between the two tables. Each table has a name, and inside of the box are their attributes/column names along with their data types. We'll cover more about columns, data types, and relationships a little later on.
 
 As you can see, each of the roles in COOP (Captain, Program Manager, and Student) are represented by a table. Captains and Program Managers (PMs) are connected directly to one another since PMs are their supervisors. Then we see that Apprentices are connected to the Cohort, just as you are an apprentice who is assigned to one cohort. Finally, the Cohort is the glue that connects the Captains to Apprentices (and by extension the PMs.)
+
+[Back to top](#table-of-contents)
 
 #### **Types of Relationships**
 
@@ -87,6 +111,8 @@ Answer the questions below to check your understanding of what we have covered s
 
 ---
 
+[Back to top](#table-of-contents)
+
 #### **Tables, Columns, and Rows**
 
 ![Tables, columns, and rows delineated in a chart](assets/tables-columns-rows.png)
@@ -101,6 +127,8 @@ In relational databases, our data is stored in a tabular structure called a rela
 
 The structure of tables in a relational database is similar to how we arrange data in spreadsheets (like Excel.)
 
+[Back to top](#table-of-contents)
+
 #### **Data Types and Structure**
 
 ![Common SQL Data Types](assets/data-types.png)
@@ -108,6 +136,8 @@ The structure of tables in a relational database is similar to how we arrange da
 **Attributes of an entity have both a type (the kind of data it is) and a value (the data itself.)** For example, the `FirstName` attribute for the `Apprentice` table is text data, so we would consider "text" to be its data type, and a possible value could be "Angela". The data type is very important because columns will only support one data type each. In Excel, you are allowed to input any type of data in a column that you would like - one cell of a column can have a number and the next cell in that same column can have a text value. However, that is where SQL and Excel differ. 
 
 SQL helps impose structure on our data by making it so that all the values in a column must share the same data type. This is necessary when we are doing things making calculations based on our data. As an example, if we summarize the data in a column of numbers, we would want to be sure that each value in that column is indeed a number, otherwise you may get incorrect results or errors.
+
+[Back to top](#table-of-contents)
 
 #### **Keys to Establishing Relationships - Primary Keys and Foreign Keys**
 
@@ -155,6 +185,8 @@ Answer the questions below to check your understanding of what we have covered s
 
 ---
 
+[Back to top](#table-of-contents)
+
 #### **Schemas and Metadata**
 
 ![Schemas in the COOP ERD](assets/schemas.png)
@@ -171,6 +203,8 @@ They can refer to the:
 When you hear the word "schema", it could potentially mean any one of these, so **it's important to understand the context in which it is mentioned; when in doubt, clarify which schema is being referred to.** 
 
 **Metadata is a set of data that describes another set of data**. An example of metadata in every day life would be the table of contents or a summary of a book. Since schemas describe how data are organized in databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information for any analysis you may do.
+
+[Back to top](#table-of-contents)
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 
@@ -228,6 +262,8 @@ Answer the questions below to check your understanding of what we have covered s
 
 ---
 
+[Back to top](#table-of-contents)
+
 #### **Relational Database Management System (RDBMS)**
 
 ![Top 6 Most Popular RDBMS Systems in 2023](assets/rdbms.png)
@@ -247,6 +283,8 @@ While there are still instances where data is stored exclusively in spreadsheets
 
 These are the main reasons for using an RDBMS to store data over a spreadsheet. However, there are exceptions where storing data in a spreadsheet may be preferable, such as when the data you need to store is relatively small, it doesn't need to be updated, and it doesn't need to be kept particularly secure. All in all, the decision of what storage method to use should always be tied back to your needs and use case(s). 
 
+[Back to top](#table-of-contents)
+
 ## **What is SQL?**
 
 **Structured Query Language (SQL - pronounced <em>"Sequel"</em>)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
@@ -263,7 +301,7 @@ Another important point to reiterate is that SQL itself is just a specification.
 
 Overall, you can think of SQL as a translator between you and a vast library of information. You ask it (query) for specific books or details (data,) and it fetches them for you. It's important to emphasize that when we write queries, we are asking for what we want (declarative) rather than telling the database how to retrieve our data (this would be considered ["imperative."](https://www.educative.io/blog/declarative-vs-imperative-programming))
 
-**SQL Sub-languages**
+### **SQL Sub-languages**
 
 SQL can be further divided into five sub-languages, each of which contains commands for specific tasks like creating databases or manipulating and querying data. Of these five, we will focus on the Data Query Language (DQL). The five sub-languages are, in no particular order:
 - **Data Definition Language (DDL)**: Used for creating or modifying the structure of tables or databases. Common DDL commands include `CREATE`, `DROP`, or `ALTER`
@@ -303,6 +341,8 @@ Answer the questions below to check your understanding of what we have covered s
 
 ---
 
+[Back to top](#table-of-contents)
+
 ### What's next?
 
 We have only scratched the surface of the topics that were introduced here. There is so much more to cover, but doing so could fill up at least a semester or more. However, there are many free resources that you can use to dive deeper into databases and SQL. Here are some external resources that we encourage you to use to enhance your studies:
@@ -314,3 +354,5 @@ We have only scratched the surface of the topics that were introduced here. Ther
 - [SQL Tutorial - Full Database Course for Beginners (Offered through `freecodecamp`)](https://youtu.be/HXV3zeQKqGY?si=kXKxJS0quRQYpZoPs)
 
 The rest of the material in SQL 101 is devoted to helping you master the basics of SQL querying. These skills will be applicable to just about any version of the language you may encounter.
+
+[Back to top](#table-of-contents)

@@ -20,7 +20,7 @@ You will come away from this class (as well as the subsequent 102 class) with a 
 
 **Databases** are ubiquitous in today's world. Every day, we interact with many different databases, whether when checking our phones for updates on our favorite applications or when we go to the store and buy things. Without them, we would not be able to store information for very long, and much of the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
-A database is simply an organized collection of data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
+A database is simply an organized collection of data that is stored electronically. Imagine a digital library where tons of books are organized and stored, and you can access any one you like by asking for what you want - that is what a database is like. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
 
 While they will not be covered in this course, we should mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
 
@@ -170,7 +170,7 @@ They can refer to the:
 
 When you hear the word "schema", it could potentially mean any one of these, so **it's important to understand the context in which it is mentioned; when in doubt, clarify which schema is being referred to.** 
 
-**Metadata is a set of data that describes another set of data**. Since schemas describe how data are organized in databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information for any analysis you may do.
+**Metadata is a set of data that describes another set of data**. An example of metadata in every day life would be the table of contents or a summary of a book. Since schemas describe how data are organized in databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information for any analysis you may do.
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 

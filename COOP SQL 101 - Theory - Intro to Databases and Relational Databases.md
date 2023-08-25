@@ -21,6 +21,8 @@ By: Martin Arroyo
 * [**What is SQL?**](#what-is-sql)
     - [**SQL Sub-languages**](#sql-sub-languages)
 
+* [**What's next?**](#whats-next)
+
 ## **Introduction**
 
 Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, we will cover some of the highlights of the theory behind relational databases as well as introduce you to common SQL query patterns and concepts that you should know to be successful in many analytics roles. The focus of this class is to provide you with a foundational framework to understand how databases work, their importance in today's digital world, and how these concepts are applied on-the-job.

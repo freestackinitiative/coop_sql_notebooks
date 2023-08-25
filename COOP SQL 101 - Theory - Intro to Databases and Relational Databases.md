@@ -232,7 +232,9 @@ Answer the questions below to check your understanding of what we have covered s
 
 ![Top 6 Most Popular RDBMS Systems in 2023](assets/rdbms.png)
 
-Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data on a device. There are quite a few different RDBMS's out there, such as **Postgresql, MySQL, Oracle and SQL Server**. An important thing to note is that each RDBMS uses a slightly different version of SQL (these are called *dialects*.) This means that the syntax can be different for some queries between SQL Server and Postgres, for example. 
+Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data on a device. Think of it like the engine in a car - while we interact with the exterior of the car, the engine is what makes sure it runs smoothly. 
+
+There are quite a few different RDBMS's out there, such as **Postgresql, MySQL, Oracle and SQL Server**. An important thing to note is that each RDBMS uses a slightly different version of SQL (these are called *dialects*.) This means that the syntax can be different for some queries between SQL Server and Postgres, for example. 
 
 **Why use a Relational Database instead of just working with data in Excel (or a similar spreadsheet software)?**
 

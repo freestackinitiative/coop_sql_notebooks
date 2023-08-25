@@ -4,13 +4,13 @@ By: Martin Arroyo
 
 ## **Introduction**
 
-Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, we will cover some of the highlights of the theory behind relational databases as well as introduce you to common SQL query patterns and concepts that you will need to know about to be successful in many analytics roles. The focus of this class is to provide you with a foundational framework of understanding how databases work, their importance in today's digital world, and how these concepts are applied on-the-job.
+Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, we will cover some of the highlights of the theory behind relational databases as well as introduce you to common SQL query patterns and concepts that you should know to be successful in many analytics roles. The focus of this class is to provide you with a foundational framework to understand how databases work, their importance in today's digital world, and how these concepts are applied on-the-job.
 
 First, we'll start by providing an overview of the theory and concepts behind relational databases. Then we introduce you to SQL, the language of data. We teach you how to write basic data retrieval queries, as well as how to process and summarize data. 
 
-The content that we cover here is typically delivered over the course of an entire semester at most universities. Our aim is to introduce you to the important concepts that you'll need to know to be effective in your roles. This means that we will not go into much depth when it comes to theory. We include links to external resources that cover those topics at length to help enhance your study.
+The content that we cover here is typically delivered over the course of an entire semester at most universities. Our aim is to introduce you to the important concepts that you'll need to know to be effective on the job. This means that we will not go into as much depth as a university course when it comes to theory. We include links to external resources that cover those topics at length to help enhance your study. While being effective is great, you can greatly enhance your effectiveness by understanding the theory behind things. We hope that this material sparks an interest in you to study databases further.
 
-We hope that you come away from this class (as well as the subsequent 102 class) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
+You will come away from this class (as well as the subsequent 102 class) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
 
 ## **Databases & Relational Database Concepts**
 
@@ -18,17 +18,17 @@ We hope that you come away from this class (as well as the subsequent 102 class)
 
 ### **A. What are databases?**
 
-**Databases** are ubiquitous in today's world. Every day, we typically interact with many different databases, whether when we check our phones for updates from our favorite applications or when we go to the store and buy things we need. Without them, we would not be able to store information for very long, and the technology that we have come to depend on would not be able to function. But what is a database exactly?
+**Databases** are ubiquitous in today's world. Every day, we interact with many different databases, whether when checking our phones for updates on our favorite applications or when we go to the store and buy things. Without them, we would not be able to store information for very long, and much of the technology that we have come to depend on would not be able to function. But what is a database exactly?
 
 A database is simply an organized collection of data that is stored electronically. There are many [different kinds of databases](https://www.simplilearn.com/tutorials/dbms-tutorial/what-are-various-types-of-databases) for a wide variety use cases. For this class, we will focus primarily on one of the most popular types - **the relational database**. 
 
-While they will not be covered in this course, we must mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases as well. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
+While they will not be covered in this course, we should mention **NoSQL databases** if we are discussing relational databases. NoSQL databases can generally be thought of as databases which are not structured like a relational database. They typically handle semi-structured or unstructured data, unlike relational databases which impose structure on data by default. There are many different types of NoSQL databases. If you are curious, [here is a resource](https://www.ibm.com/topics/nosql-databases) where you can learn more about them. 
 
 A popular feature of relational databases is the language that is used to manage them, **Structured Query Language (SQL)**. Unlike relational databases, NoSQL databases - as you might expect from the name - either do not use SQL or don't *just use* SQL. 
 
 ### B. **What are relational databases?**
 
-[Here is an optional video](https://youtu.be/NvrpuBAMddw?si=L0Cl9VrACEKoh6gR) that gives you a brief overview of Relational Databases. It may be helpful to watch this short video first, then continue on with the rest of the content.
+[Here is an optional video](https://youtu.be/NvrpuBAMddw?si=L0Cl9VrACEKoh6gR) that gives you a brief overview of Relational Databases. It may be helpful to watch this short video first, then continue on with the rest of this reading.
 
 #### **Entity Relationship Diagrams (ERD)**
 
@@ -38,9 +38,9 @@ Simply put, **a relational database is a type of database that stores informatio
 
 ![COOP ERD](assets/COOP_ERD.png)
 
-The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each show which ones are connected. The marks at the end of a line, known as the "Crow's Foot", indicate the type of relationship between two tables. Each table has a name and inside of the box are the attributes/column names along with their data types. We'll cover more about columns, data types, and relationships a little later on.
+The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each entity shows which ones are connected. The marks at the end of a line, known as the "Crow's Foot", indicate the type of relationship between the two tables. Each table has a name, and inside of the box are their attributes/column names along with their data types. We'll cover more about columns, data types, and relationships a little later on.
 
-As you can see, each of the roles in COOP (Captain, Program Manager, and Student) are represented by a table. Captains and Program Managers (PMs) are connected directly to one another since PMs are their supervisors. Then we see that Apprentices connected to the Cohort, just as you are an apprentice who are assigned to one cohort. Finally, the Cohort is the glue that connects the Captains to Apprentices (and by extension the PMs.)
+As you can see, each of the roles in COOP (Captain, Program Manager, and Student) are represented by a table. Captains and Program Managers (PMs) are connected directly to one another since PMs are their supervisors. Then we see that Apprentices are connected to the Cohort, just as you are an apprentice who is assigned to one cohort. Finally, the Cohort is the glue that connects the Captains to Apprentices (and by extension the PMs.)
 
 #### **Types of Relationships**
 
@@ -85,9 +85,9 @@ Answer the questions below to check your understanding of what we have covered s
 
 ![Tables, columns, and rows delineated in a chart](assets/tables-columns-rows.png)
 
-In relational databases, our data is stored in a tabular structure called a relation. However, it is much more common to refer to relations as tables, so going forward, we will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
+In relational databases, our data is stored in a tabular structure called a relation. However, it is much more common to refer to relations as tables. We will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
 
-**Each table typically represents an "entity" or some "thing" we would like to model**. Using our ERD example from earlier, an `Apprentice` would be considered an entity. 
+**Each table typically represents an "entity" or some "thing" we would like to model in our database**. Using our ERD example from earlier, an `Apprentice` would be considered an entity. 
 
 **Columns represent attributes about an entity**. Continuing with our example, some attributes of an `Apprentice` includes their `FirstName` and their `CohortID`. 
 
@@ -107,7 +107,7 @@ SQL helps impose structure on our data by making it so that all the values in a 
 
 So far, we have seen how entities/tables can be related to one another and the types of relationships they can have (one-to-one, one-to-many, and many-to-many.) But the key (pun fully intended) to establishing these relationships lies in the concept of **Primary Keys** and **Foreign Keys**.
 
-**Primary Keys are a column (or multiple columns) in a table that identify a unique record**. In our COOP example, the `ID` column in the `ProgramManager` table would be considered a primary key because it uniquely identifies a single Program Manager. 
+**Primary Keys are a column (or multiple columns) in a table that identify a unique record**. In our COOP example, the `ID` column in the `ProgramManager` table would be considered a primary key because it uniquely identifies a single Program Manager. You might be thinking, "why not just use the `FirstName`, `LastName`, or a combination of the two instead?" The reason we wouldn't be able to use those columns as unique identifiers in our table is because it is possible that there would be Program Managers with the same first and last name. Therefore, neither of those columns (or their combination) can be used as a reliable indicator of uniqueness.
 
 **Foreign Keys are used to formally establish a relationship between two tables in the database and do not need to uniquely identify rows**. Typically, one table will have a column that references the Primary Key of another table. The column in the table that references the Primary Key in this example is called the Foreign Key. One way to think about this is by using a parent-child relationship as an example - the "parent" table in this case is the one with the Primary Key that the "child" table (with the Foreign Key) refers to. This is effectively establishing a one-to-many relationship between the "parent" and "children", since parent's can have one ore more "children" while children (in this scenario!) have one and only parent.  
 
@@ -153,9 +153,18 @@ Answer the questions below to check your understanding of what we have covered s
 
 ![Schemas in the COOP ERD](assets/schemas.png)
 
-**Schemas can be a little confusing at first because the term can be used to refer one of two things: the structure of a table or the structure of a database**. When we talk about the schema of a table, we are referring to the table's name as well as the structure of the table, such as the column names and their data types. However, when referring to the structure of a database, the schema describes the tables (e.g. tables names) that are in the database. **So we really have two types of schemas: table schemas and database schemas**. When you hear the word "schema", it could potentially mean either one of these, so it's important to understand the context in which it is mentioned; **when in doubt, clarify whether the table or database schema is being referred to.** 
+**Schemas describe how data is organized in a database**. It is a broad term that, in practice, can refer to different scopes of organization in the database.
+They can refer to the:
 
-**Metadata is a set of data that describes another set of data**. Since schemas describe either tables or databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information to help in your analysis.
+- **Structure of a single table**: When we talk about the schema of a table, we are referring to the table's name as well as the structure of the table, such as the column names and their data types. 
+
+- **Collections of tables within a database**: Databases can be subdivided into different schemas, which each have their own collection of tables. For example, the tables in our COOP database could potentially be split into an "Employee" schema (`ProgramManager` and `Captain`) and a "Student" schema (`Apprentice`, `Cohort`). 
+
+- **Set of ALL tables in a database**: When referring to the structure of a database as a whole, the schema describes the entire set of all tables (e.g. tables names and schemas) in the database.  
+
+When you hear the word "schema", it could potentially mean any one of these, so **it's important to understand the context in which it is mentioned; when in doubt, clarify which schema is being referred to.** 
+
+**Metadata is a set of data that describes another set of data**. Since schemas describe how data are organized in databases, they are considered a type of metadata. Knowing the metadata of either the table or the database that you are using is important as it gives you critical context and information for any analysis you may do.
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 
@@ -185,10 +194,10 @@ Normalization, denormalization, OLTP, and OLAP are all concepts that go much dee
 
 Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
 
-*1. What is the difference between a table schema and a database schema?*
+*1. What is a schema, and what are two possible things it could refer to?*
 <details>
     <summary>Click to reveal the answer</summary>
-    <p>The table schema provides metadata about a specific table, such as the name, the column names, and their data types. The database schema provides metadata about the database as a whole, including the names of the tables that are in it.</p>
+    <p>The schema refers to the organization of data inside of a database. Data can be organized according to different scopes. For tables, a table schema provides metadata about a specific table, such as the name, the column names, and their data types. A database schema provides metadata about the database as a whole, including the names of the tables that are in it and the possible schemas that the tables are organized intos. It could also simply refer to a collection of tables within a database.</p>
 </details>
 </br>
 

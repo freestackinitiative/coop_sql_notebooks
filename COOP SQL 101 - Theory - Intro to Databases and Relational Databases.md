@@ -26,6 +26,12 @@ While they will not be covered in this course, we should mention **NoSQL databas
 
 A popular feature of relational databases is the language that is used to manage them, **Structured Query Language (SQL)**. Unlike relational databases, NoSQL databases - as you might expect from the name - either do not use SQL or don't *just use* SQL. 
 
+>**<em>A note about the modern data stack and nascent technologies in the data ecosystem:</em>**
+>
+>Relational database system architectures have been around and evolving somewhat since they were first introduced in the 1970s. However, as the amount of data in the world continues to grow massively, new database architectures and paradigms have risen to meet the increased processing and storage needs. Architectures such as Data Lakes, Data Lakehouses, and Distributed Databases are some examples of newer methods for storing data. The details of such systems are outside of the scope of this course since it is focused on data analysis using SQL. But if you are interested in pursuing a role in a specialty data engineering, then it would be worth it to study these topics in addition to relational databases.
+>
+>An interesting thing to note is that for these newer architectures, there is a common language that is being used to query and manipulate the data in them - SQL! While they are not relational databases, SQL has become so ubiquitous that designers of these systems made sure that it was a key component. That's one of the reasons why SQL is a critical skill for any data professional! 
+
 ### B. **What are relational databases?**
 
 [Here is an optional video](https://youtu.be/NvrpuBAMddw?si=L0Cl9VrACEKoh6gR) that gives you a brief overview of Relational Databases. It may be helpful to watch this short video first, then continue on with the rest of this reading.
@@ -168,13 +174,19 @@ When you hear the word "schema", it could potentially mean any one of these, so 
 
 #### **Normalization, Denormalization, and OLTP vs OLAP**
 
-Normalization and denormalization are data modeling methods that have different goals for data storage and retrieval. **Normalization is used when we want to ensure the consistency and integrity of the data by eliminating redundancy (e.g. duplicate values.)** This is achieved by dividing the tables into smaller sub-tables until redundant data are eliminated. **Denormalization, on the other hand, favors easier querying of the data and achieves this by combining data/tables together, even if it may introduce redundancy.**
+Normalization and denormalization are data modeling methods that have different goals for data storage and retrieval. **Normalization is used when we want to ensure the consistency and integrity of the data by eliminating redundancy (e.g. duplicate records.)** This is achieved by dividing the tables into smaller sub-tables until redundant data are eliminated. **Denormalization, on the other hand, favors easier querying of the data and achieves this by combining data/tables together, even if it may introduce redundancy.**
+
+>**Extra Context**: *What exactly is redundancy in a database and why does it matter?*
+>
+>Redundancy in a database refers to the unnecessary repetition of data or storing the same piece of information in multiple places. It matters because it can lead to increased storage costs, data inconsistencies, and complications in data updates and retrieval. By reducing or eliminating redundancy, the integrity (accuracy and consistency) of the data is maintained.
 
 ![Normalization vs Denormalization](assets/normalized-denormalized.png)
 
 The normalization method is typically used in **Online Transactional Processing (OLTP) systems, which are use to model real-time transactions, favoring (write) speed, consistency, and data integrity**. Relational databases are used to create this model because of the strong emphasis on structure. OLTP typically has a focus on business-critical applications, meaning items that need to be processed and recorded in real-time. Examples of this kind of processing would be managing inventory in a warehouse or credit card transactions. Data in these databases are not usually kept for very long, so there is little historical data generally available in these systems.
 
-**Online Analytical Processing (OLAP) systems, which generally use a denormalized structure for data, are used when querying and analyzing the data is more important than being able to store data quickly and without redundancy**. OLAP systems can be built using relational databases but may also be built using other types of databases. These systems are used for information mining and gathering insights for a business. They typically store much more data than OLTP systems as it is essentially an archive of historical data that is continuously added to. Very often, the data source for an OLAP system will be the data from an OLT System.
+**Online Analytical Processing (OLAP) systems, which generally use a denormalized structure for data, are used when querying and analyzing historical data is more important than being able to store data quickly and without redundancy**. OLAP systems can be built using relational databases, but may also be built using other types of databases or architectures (e.g. [Data Lakes](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)). These systems are used for information mining and gathering insights for a business. They typically store much more data than OLTP systems as it is essentially an archive of historical data that is continuously added to. Very often, the data source for an OLAP system will be the data from an OLT System.
+
+While OLTP systems will generally use normalization and OLAP systems denormalization, it's important to point out that this isn't a hard and fast rule. There may be cases where denormalization is preferred in an OLTP system, as well as using normalization in OLAP systems. This is context and use-case dependent, so you will need to understand how the particular database you are using was structured. 
 
 The diagram below shows a high-level breakdown of how OLTP and OLAP systems are used:
 
@@ -237,14 +249,22 @@ These are the main reasons for using an RDBMS to store data over a spreadsheet. 
 
 **Structured Query Language (SQL - pronounced <em>"Sequel"</em>)** was created in the early 1970s by researchers at IBM based on [the relational model that was described by Edgar F. Codd](https://dl.acm.org/doi/10.1145/362384.362685). It is a domain-specific programming language that is used for querying and managing a RDBMS.
 
+>**Extra Context**: *The math behind relational databases*
+>
+>[Relational algebra](https://www.geeksforgeeks.org/introduction-of-relational-algebra-in-dbms/) is a set of mathematical operations that define the foundation for querying relational databases. It provides a theoretical framework consisting of operations like selection, projection, union, set difference, and Cartesian product to manipulate data sets (relations). SQL, the standard language for querying relational databases, is essentially a practical implementation of these concepts, translating relational algebra operations into familiar, user-friendly query syntax.
+>
+>For those who want a challenge, after completing SQL 101, see if you can go back and translate your queries into expressions using Relational Algebra!
+
 SQL is also known as a declarative language. This means that when we write queries in SQL, we are describing what data we want rather than describing, step-by-step, how the RDBMS should retrieve that data. The syntax is relatively simple to learn and writing queries can feel more intuitive which makes SQL a beginner-friendly language. 
 
 Another important point to reiterate is that SQL itself is just a specification. **Different RDBMS vendors implement their own versions of SQL** based on that specification. This is why the syntax between the SQL for one RDBMS will differ (albeit slightly) from that of another RDBMS system. In practice, this means that you should always be aware of what RDBMS you are using so that you know what language features are available to you (and what documentation to use.)
 
+Overall, you can think of SQL as a translator between you and a vast library of information. You ask it (query) for specific books or details (data,) and it fetches them for you. It's important to emphasize that when we write queries, we are asking for what we want (declarative) rather than telling the database how to retrieve our data (this would be considered ["imperative."](https://www.educative.io/blog/declarative-vs-imperative-programming))
+
 **SQL Sub-languages**
 
 SQL can be further divided into five sub-languages, each of which contains commands for specific tasks like creating databases or manipulating and querying data. Of these five, we will focus on the Data Query Language (DQL). The five sub-languages are, in no particular order:
-- **Data Defintion Language (DDL)**: Used for creating or modifying the structure of tables or databases. Common DDL commands include `CREATE`, `DROP`, or `ALTER`
+- **Data Definition Language (DDL)**: Used for creating or modifying the structure of tables or databases. Common DDL commands include `CREATE`, `DROP`, or `ALTER`
 - **Data Manipulation Language (DML)**: Used for manipulating data that is already stored in the database, typically by either adding, removing, or updating the data. Common DML commands include `INSERT`, `UPDATE`, and `DELETE`.
 - **Data Query Language (DQL)**: Used for querying data in the database. DQL is where the `SELECT` command comes from.
 - **Data Control Language (DCL)**: Used for granting or modifying access to data stored in tables. Common DCL commands include `GRANT` and `REVOKE`.

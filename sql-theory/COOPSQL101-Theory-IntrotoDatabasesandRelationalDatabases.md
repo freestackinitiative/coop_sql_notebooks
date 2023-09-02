@@ -97,14 +97,14 @@ Answer the questions below to check your understanding of what we have covered s
     <summary>Click to reveal the answer</summary>
     <p>A database is an organized collection of data stored electronically.</p>
 </details>
-</br>
+
 
 *2. What are some of the differences between relational databases and NoSQL databases?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>Relational databases use SQL exclusively for management where NoSQL databases either don't use SQL at all or don't just use SQL; Relational databases impose structure on data. NoSQL databases typically deal with semi-structured or unstructured data.</p>
 </details>
-</br>
+
 
 *3. What type of relationship is modeled between the entities in our COOP Program ERD?*
 <details>
@@ -173,14 +173,14 @@ Answer the questions below to check your understanding of what we have covered s
     <summary>Click to reveal the answer</summary>
     <p>Tables represent entities or things in a database. Columns are part of a table and represent the attributes of an entity. Rows each represent one record of an entity in a given table.</p>
 </details>
-</br>
+
 
 *2. What role do data types play in structuring data in a relational database?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>Data Types are used to help ensure that the data in a column are all consistent.</p>
 </details>
-</br>
+
 
 *3. What is the difference between a primary key and a foreign key?*
 <details>
@@ -250,14 +250,14 @@ Answer the questions below to check your understanding of what we have covered s
     <summary>Click to reveal the answer</summary>
     <p>The schema refers to the organization of data inside of a database. Data can be organized according to different scopes. For tables, a table schema provides metadata about a specific table, such as the name, the column names, and their data types. A database schema provides metadata about the database as a whole, including the names of the tables that are in it and the possible schemas that the tables are organized intos. It could also simply refer to a collection of tables within a database.</p>
 </details>
-</br>
+
 
 *2. When do we use denormalization to store our data in a database?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>Denormalization is used when we want to focus on querying and analyzing historical data.</p>
 </details>
-</br>
+
 
 *3. What is the difference between OLTP and OLAP Systems? As a Data Analyst, which type of system are you more likely to work in?*
 <details>
@@ -329,14 +329,14 @@ Answer the questions below to check your understanding of what we have covered s
     <summary>Click to reveal the answer</summary>
     <p>Structured Query Language.</p>
 </details>
-</br>
+
 
 *2. When would we use a Relational Database Management System? When would it be best to just use a spreadsheet?*
 <details>
     <summary>Click to reveal the answer</summary>
     <p>We would use a Relational Database Management System when we are working with a lot of data that is consistently updated and need to have a lot of people work on that data simultaneously. However, when you don't need a lot of people to work on the data and it is not updated very often (or at all) then a spreadsheet is sufficient.</p>
 </details>
-</br>
+
 
 *3. Which sub-language of SQL will we be focused on for the purpose of writing queries?*
 <details>

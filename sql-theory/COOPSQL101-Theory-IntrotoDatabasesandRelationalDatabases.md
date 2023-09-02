@@ -37,7 +37,7 @@ You will come away from this class (as well as the subsequent 102 class) with a 
 
 ## **Databases & Relational Database Concepts**
 
-![Databases](assets/databases.png)
+![Databases](/assets/databases.png)
 
 ### **What are databases?**
 
@@ -67,7 +67,7 @@ We just introduced databases, as well as relational databases, and discussed how
 
 Simply put, **a relational database is a type of database that stores information in tables which are related (or connected) to one another**. It's good to visualize what we mean by relationships between tables, so let's introduce you to the **Entity Relationship Diagram (ERD)**. ERD's are used to represent a database by modeling the relationships between different entities, or *tables*, using a type of flowchart like the one shown below:
 
-![COOP ERD](assets/COOP_ERD.png)
+![COOP ERD](/assets/COOP_ERD.png)
 
 The entities in this ERD should be familiar to you - it's the COOP program structure - except this is how we might model COOP in a database based on the relationships between the different roles in the program. As mentioned earlier, entities can be thought of as the tables in our database. The boxes each represent a table in our database, and the lines between each entity shows which ones are connected. The marks at the end of a line, known as the "Crow's Foot", indicate the type of relationship between the two tables. Each table has a name, and inside of the box are their attributes/column names along with their data types. We'll cover more about columns, data types, and relationships a little later on.
 
@@ -84,7 +84,7 @@ Let's imagine we have two tables, `Table A` and `Table B`, that are related:
 - **`One-to-Many`**: One row in `Table A` can be matched to one or more rows in `Table B`. A real-life example would be the relationship between the `ProgramManager` and `Captain` tables, where one Program Manager supervises many captains, but each captain reports to just one Program Manager.
 - **`Many-to-Many`**: One or more rows in `Table A` can be matched to one or more rows in `Table B`. An example of this is the relationship between the `Apprentice` and `Captain` tables - each `Captain` has multiple Apprentices and each `Apprentice` has multiple Captains.  
 
-![Crows Foot Notation Example](assets/crows-foot.png)
+![Crows Foot Notation Example](/assets/crows-foot.png)
 
 ---
 
@@ -118,7 +118,7 @@ Answer the questions below to check your understanding of what we have covered s
 
 #### **Tables, Columns, and Rows**
 
-![Tables, columns, and rows delineated in a chart](assets/tables-columns-rows.png)
+![Tables, columns, and rows delineated in a chart](/assets/tables-columns-rows.png)
 
 In relational databases, our data is stored in a tabular structure called a relation. However, it is much more common to refer to relations as tables. We will be using the terms interchangeably. **Tables are 2-dimensional structures that store data in rows and columns**. 
 
@@ -134,7 +134,7 @@ The structure of tables in a relational database is similar to how we arrange da
 
 #### **Data Types and Structure**
 
-![Common SQL Data Types](assets/data-types.png)
+![Common SQL Data Types](/assets/data-types.png)
 
 **Attributes of an entity have both a type (the kind of data it is) and a value (the data itself.)** For example, the `FirstName` attribute for the `Apprentice` table is text data, so we would consider "text" to be its data type, and a possible value could be "Angela". The data type is very important because columns will only support one data type each. In Excel, you are allowed to input any type of data in a column that you would like - one cell of a column can have a number and the next cell in that same column can have a text value. However, that is where SQL and Excel differ. 
 
@@ -146,13 +146,15 @@ SQL helps impose structure on our data by making it so that all the values in a 
 
 So far, we have seen how entities/tables can be related to one another and the types of relationships they can have (one-to-one, one-to-many, and many-to-many.) But the key (pun fully intended) to establishing these relationships lies in the concept of **Primary Keys** and **Foreign Keys**.
 
+![Primary Key Meme](/assets/primary-key-meme.png)
+
 **Primary Keys are a column (or multiple columns) in a table that identify a unique record**. In our COOP example, the `ID` column in the `ProgramManager` table would be considered a primary key because it uniquely identifies a single Program Manager. You might be thinking, "why not just use the `FirstName`, `LastName`, or a combination of the two instead?" The reason we wouldn't be able to use those columns as unique identifiers in our table is because it is possible that there would be Program Managers with the same first and last name. Therefore, neither of those columns (or their combination) can be used as a reliable indicator of uniqueness.
 
 **Foreign Keys are used to formally establish a relationship between two tables in the database and do not need to uniquely identify rows**. Typically, one table will have a column that references the Primary Key of another table. The column in the table that references the Primary Key in this example is called the Foreign Key. One way to think about this is by using a parent-child relationship as an example - the "parent" table in this case is the one with the Primary Key that the "child" table (with the Foreign Key) refers to. This is effectively establishing a one-to-many relationship between the "parent" and "children", since parent's can have one ore more "children" while children (in this scenario!) have one and only parent.  
 
 To illustrate this further, let's look at the `ProgramManager` and `Captain` tables, which have a one-to-many relationship, in our ERD:
 
-![ERD showing the relationship between Program Managers and Captains](assets/COOP-PMs-Captains-relationship.png)
+![ERD showing the relationship between Program Managers and Captains](/assets/COOP-PMs-Captains-relationship.png)
 
 The `PM_ID` column in the `Captain` table is the Foreign Key in this relationship, since it references the `ID` column of `ProgramManager`, which is the Primary Key of that table. Put another way, the relationship between `ProgramManager` and `Captain` is similar to the parent-child example since they are both one-to-many relationships established through the Primary Key(`ID`) in the "parent" table (`ProgramManager`) and the Foreign Key(`PM_ID`) in the "child" table (`Captain`). 
 
@@ -192,7 +194,7 @@ Answer the questions below to check your understanding of what we have covered s
 
 #### **Schemas and Metadata**
 
-![Schemas in the COOP ERD](assets/schemas.png)
+![Schemas in the COOP ERD](/assets/schemas.png)
 
 **Schemas describe how data is organized in a database**. It is a broad term that, in practice, can refer to different scopes of organization in the database.
 They can refer to the:
@@ -217,7 +219,7 @@ Normalization and denormalization are data modeling methods that have different 
 >
 >Redundancy in a database refers to the unnecessary repetition of data or storing the same piece of information in multiple places. It matters because it can lead to increased storage costs, data inconsistencies, and complications in data updates and retrieval. By reducing or eliminating redundancy, the integrity (accuracy and consistency) of the data is maintained.
 
-![Normalization vs Denormalization](assets/normalized-denormalized.png)
+![Normalization vs Denormalization](/assets/normalized-denormalized.png)
 
 The normalization method is typically used in **Online Transactional Processing (OLTP) systems, which are use to model real-time transactions, favoring (write) speed, consistency, and data integrity**. Relational databases are used to create this model because of the strong emphasis on structure. OLTP typically has a focus on business-critical applications, meaning items that need to be processed and recorded in real-time. Examples of this kind of processing would be managing inventory in a warehouse or credit card transactions. Data in these databases are not usually kept for very long, so there is little historical data generally available in these systems.
 
@@ -227,7 +229,7 @@ While OLTP systems will generally use normalization and OLAP systems denormaliza
 
 The diagram below shows a high-level breakdown of how OLTP and OLAP systems are used:
 
-![OLTP and OLAP systems](assets/oltp-olap.png)
+![OLTP and OLAP systems](/assets/oltp-olap.png)
 
 As data analysts, you may work with databases that are either OLTP or OLAP systems. The most common system used for data analytics is OLAP, which often models data in what are known as data warehouses. Data Warehouses combine data from multiple sources within a business to create a unified, holistic view of the data for reporting and analysis. This is a topic that books are devoted to and is out of the scope of what we will cover in our class. [This article](https://www.oracle.com/database/what-is-a-data-warehouse/) expands on the concept further.  
 
@@ -269,7 +271,7 @@ Answer the questions below to check your understanding of what we have covered s
 
 #### **Relational Database Management System (RDBMS)**
 
-![Top 6 Most Popular RDBMS Systems in 2023](assets/rdbms.png)
+![Top 6 Most Popular RDBMS Systems in 2023](/assets/rdbms.png)
 
 Until now, we have mostly been describing the relational database from a theoretical perspective. **However, when we interact with a relational database on a computer, we do so using a Relational Database Management System (RDBMS)**. The RDBMS essentially brings the relational database model to life and makes it something we can actually use by handling the physical storage of the data on a device. Think of it like the engine in a car - while we interact with the exterior of the car, the engine is what makes sure it runs smoothly. 
 
@@ -313,7 +315,7 @@ SQL can be further divided into five sub-languages, each of which contains comma
 - **Data Control Language (DCL)**: Used for granting or modifying access to data stored in tables. Common DCL commands include `GRANT` and `REVOKE`.
 - **Transaction Control Language (TCL)**: Used for controlling transactions in the database. Common TCL commands include `COMMIT`, `SAVEPOINT`, and `ROLLBACK`.
 
-![SQL Sub-languages](assets/sql-sub-languages.png)
+![SQL Sub-languages](/assets/sql-sub-languages.png)
 
 
 ---

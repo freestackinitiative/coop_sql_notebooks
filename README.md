@@ -10,9 +10,9 @@ You can open the notebooks directly in Google Colab by using the links below nex
 
 ## **SQL 101 - Introduction to Databases and Querying**
 
-Theory Section: [Introduction to Databases and Relational Databases](/sql-theory/COOPSQL101-Theory-IntrotoDatabasesandRelationalDatabases.md)
+**Theory Section:** [Introduction to Databases and Relational Databases](/sql-theory/COOPSQL101-Theory-IntrotoDatabasesandRelationalDatabases.md)
 
-Practice Section - Basic Data Retrieval: <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/2.0/COOP_SQL_101-Practice-BasicDataRetrieval.ipynb">
+**Practice Section - Basic Data Retrieval**: <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/2.0/COOP_SQL_101-Practice-BasicDataRetrieval.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 

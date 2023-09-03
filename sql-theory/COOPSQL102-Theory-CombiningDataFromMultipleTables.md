@@ -57,19 +57,19 @@ To specify the type of join we want to use, here is the general form:
 
 `{Join Type} {name of table to join}`
 
-**Example:** `INNER JOIN company`
+**Example:** `INNER JOIN Foods`
 
 To specify the column and constraint, we use the following form:
 
 `{First Table.Column to join on} {constraint} {Second Table.Column to join on}`
 
-**Example:** `foods.company_id=company.company_id`
+**Example:** `Company.company_id=Foods.company_id`
 
 Putting it all together, writing the join would look like:
 
 ```SQL
-INNER JOIN company
-ON foods.company_id=order_details.company_id
+INNER JOIN Foods
+ON Company.company_id=Foods.company_id
 ```
 
 >**Extra Context:** <em>Dot Notation in Queries</em> 
@@ -80,11 +80,28 @@ ON foods.company_id=order_details.company_id
 >
 >`table_name.column_name`
 
+Now let's put the whole query together now and see the how it all works:
+
+```sql
+SELECT *
+FROM Company
+INNER JOIN Foods
+ON Company.company_id=Foods.company_id
+```
+
+![Inner Join - Company & Foods](../assets/inner-join-company-foods.png)
+
+![Result of Company-Foods Inner Join](../assets/inner-join-company-foods-tables.png)
+
+
+As you can see, one row in each of the tables gets dropped from the final result. This happened because the value for `company_id` in these rows did not exist in both tables. Only the rows where the value for `company_id` exists in both tables are included since that is how they are matched. 
+ 
 ### `LEFT JOIN`
 
 A `LEFT JOIN` is the other most common join after `INNER JOIN`. The difference between the two is how the rows are matched in the query result. While an `INNER JOIN` includes only the rows that match from both tables, a `LEFT JOIN` will keep all the rows from the left-side of the join and only those that match from the right-side. When this happens, instead of dropping those records like the `INNER JOIN`, any values in unmatched rows are set to `NULL`. Visually, the matched rows will look like this:
 
 ![Left Join](../assets/left-join-company-foods.png)
+![Left Join Company-Foods Tables](../assets/left-join-company-foods-table.png)
 
 If you're new to `LEFT JOIN`, you're probably wondering what was meant before by "left-side of the join." Visually, we can see that there is a table on the left side that has all of the records included with only the records at the intersection included from the right. But how does that translate to an actual query?
 
@@ -121,6 +138,7 @@ As mentioned earlier, `RIGHT JOIN` is rarely used in practice. This is because y
 The opposite of the `LEFT JOIN`, `RIGHT JOIN` includes all the records from the "right-side" of the join and only records that match from the "left-side". Also, similar to `LEFT JOIN`, values in records from the other side of the join that don't match are set to `null` and included in our query results. Visually, the resulting matches look like this:
 
 ![Right Join](../assets/right-join-company-foods.png)
+![Right Join Company - Foods](../assets/right-join-company-foods-table.png)
 
 Here is the query breakdown:
 
@@ -141,15 +159,24 @@ Syntactically, it is almost identical to the other joins. Let's run a `RIGHT JOI
 Here is how the matching looks visually:
 
 ![Outer Join](../assets/full-outer-join-company-foods.png)
+![Full Outer Join Company-Foods](../assets/full-outer-join-company-foods-table.png)
 
 The query syntax is pretty much identical to the others, aside from specifying the join type itself:
 
 ```SQL
 SELECT *
-FROM company
-FULL OUTER JOIN foods
-ON company.company_id=foods.food_id
+FROM Company
+FULL OUTER JOIN Foods
+ON Company.company_id=Foods.food_id
 ```
+
+## Practical considerations for selecting columns for joins
+
+Joining datasets usually depends on primary and foreign key relationships, but these relationships may not always be clear (or available.) You may find yourself in a situation like this when dealing with a new data set. In these cases, understanding the data's origin, purpose, and contents can help. This can be done by finding documentation like data dictionaries or entity relationship diagrams (ERDs) or consulting with subject matter experts.
+
+If there's no documentation and no experts are available, exploratory data analysis becomes crucial. This involves understanding column data types, summary statistics, and identifying missing values.  Look for unique identifier columns, or possible primary keys - the values in these columns should be unique and non-null. [The information_schema](https://en.wikipedia.org/wiki/Information_schema), found in most relational databases, may also provide helpful metadata that can point to relationships.
+
+Overall, you should always attempt to find any documentation available for the data you are using in order to understand how you can connect tables together. Additionally, seek out help from subject matter experts who know the data well. If you can find neither of these sources for a data set you are working with, then exploratory data analysis becomes crucial. You will need to develop an understanding of the data to help you pick out the columns that can be used to join the tables together for your analysis.
 
 ### Summary
 
@@ -157,27 +184,12 @@ Overall, there are **four join types** that you should be aware of (and which we
 
 - `INNER JOIN`: Only keep the records that match the constraint between the two tables
 
-    ![Inner Join](../assets/inner-join-company-foods.png)
-
 - `LEFT JOIN`: Keep all the records from the left-side of the join, and only show values for the records on the right-side that matched. Any values from the right-side that weren't matched will be assigned a `null` value.
-
-    ![Left Join](../assets/left-join-company-foods.png)
 
 - `RIGHT JOIN`: The opposite of the `LEFT JOIN` - keep all the records from the right-side of the join and only show values for the records on the left-side that matched. Any values from the left-sie that weren't matched will be assigned a `null` value.
 
-    ![Right Join](../assets/right-join-company-foods.png)
-
 - `FULL OUTER JOIN`: Keep all records between both tables, but only show the values that match my constraint. All other records that don't match will be included, but those values will be set to null.
 
-    ![Full Outer Join](../assets/full-outer-join-company-foods.png)
+Now you know the theory behind the most fundamental types of joins in SQL. In the theory section of 102, you will use everything you learned here and apply it to write queries to help you generate more insights for our fictional restaurant. 
 
-We will dive a bit deeper into the details of each of these join types as we work through some practical examples in the SQL 102 Notebook. Also, these are only four join types out of many. There are some more advanced joins, like [cross-joins, natural joins, and self-joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k) that you should eventually become familiar with as you enhance your skills and understanding.
-
-
-## Practical considerations for selecting attributes/columns for joins
-
-Joining datasets usually depends on primary and foreign key relationships, but these aren't always clear (or available), especially with unfamiliar data. In such cases, understanding the data's origin, purpose, and contents can help. This can be done by finding documentation like data dictionaries or entity relationship diagrams (ERDs) or consulting with subject matter experts.
-
-If there's no documentation or experts, exploratory data analysis becomes crucial. This involves understanding column data types, summary statistics, and identifying missing values. Aim to identify unique identifier columns, or potential primary keys for joins, which should be unique and non-null. [The information_schema](https://en.wikipedia.org/wiki/Information_schema), found in most relational databases, can also provide helpful metadata.
-
-The last step in joining datasets is connecting tables using primary keys identified earlier. If key relationships are known, this is simple. Otherwise, analyze and understand primary keys, look for common columns, and try joining. Duplicates after joining suggest incorrect column usage. This illustrates why it is crucial for you to understand your data.
+The join types mentioned here are the most important to know, but there are a few more join types that you may come across. There are some more advanced joins, like [cross-joins, natural joins, and self-joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k) that you should eventually become familiar with as you enhance your skills and understanding.

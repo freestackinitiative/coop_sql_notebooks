@@ -2,6 +2,8 @@
 
 By: Martin Arroyo
 
+*Estimated Reading Time:* **<em>23 minutes</em>**
+
 ### Table of Contents:
 
 * [**Introduction**](#introduction)

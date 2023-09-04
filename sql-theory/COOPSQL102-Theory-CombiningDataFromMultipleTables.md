@@ -9,6 +9,8 @@ By: Martin Arroyo
 * [**What are joins and why do we use them?**](#what-are-joins-and-why-do-we-use-them)
     - [**A hypothetical join scenario**](#a-hypothetical-join-scenario)
 
+* [**What are unions and why do we use them?**](#what-are-unions-and-why-do-we-use-them)
+
 * [**`INNER JOIN` - Working together through an example of the most common join**](#inner-join---working-together-through-an-example-of-the-most-common-join)
     - [**Join Syntax**](#join-syntax)
 
@@ -27,6 +29,8 @@ By: Martin Arroyo
 
 * [**Practical considerations for selecting columns for joins**](#practical-considerations-for-selecting-columns-for-joins)
 
+* [**A Walkthrough of a Practical `UNION` Example**](#a-walkthrough-of-a-practical-union-example)
+
 * [**Summary**](#summary)
 
 
@@ -34,9 +38,9 @@ By: Martin Arroyo
 
 Welcome to **SQL 102 - Intermediate SQL Queries**! In **SQL 101 - Introduction to Databases and Querying**, you learned how to write queries that selected, filtered, aggregated, and ordered data from a single table. In this class, we are going to add to your SQL toolbox by teaching you how to combine data from multiple tables to generate deeper insights. You will also learn more advanced querying techniques, such as using more advanced functions, subqueries, and more!
 
-In this theory section, we will cover what you should know about joins in SQL. Understanding joins is crucial to being able to work with data in a database, since you will be dealing with more than just one table more often than not. Joins are also one of the most common technical interview topics that you will encounter, so they are definitely something you should work on! 
+In this theory section, we will cover what you should know about joins and unions in SQL. Understanding how to combine data from multiple tables is crucial to being able to work with data in a database, since you will mostly be dealing with more than just one table. Joins are also one of the most common technical interview topics that you will encounter, so they are definitely something you should work on! 
 
-We will walk you through what joins are and why we use them in this section. Then, in the following SQL 102 notebook, you will have plenty of practice writing your own queries to join data. By the time you're finished, you'll know enough to nail any questions on joins in your next technical interview! 
+We will walk you through what joins and unions are and why we use them in this section. Then, in the following SQL 102 notebook, you will have plenty of practice writing your own queries to combine data. By the time you're finished, you'll know enough to nail any questions on joins in your next technical interview! 
 
 [Back to top](#table-of-contents)
 
@@ -44,9 +48,27 @@ We will walk you through what joins are and why we use them in this section. The
 
 Databases generally have more than one table. And since databases store tables that are (generally) related to one another, we need a way to combine data from multiple tables. We're going to use our fictional restaurant database from SQL 101 as an example. You may recall that there is a `Customers` table which keeps track of our customer demographic information. There is also a `Reservations` table, which keeps tracks of reservations made by customers. If we want to answer a question like, <em>"What are the top 5 states that our all-time most frequent customers come from?"</em>, then we need to combine the data from those two tables.  
 
-When we join data, we are combining two or more related tables into a single view to add context to our data to generate more holistic insights. We use common attributes (or *columns*) to establish relationships between the tables, along with constraints that control how records (or *rows*) are matched between them. In SQL 101, we mentioned that these relationships are often (but not always) established using primary keys and foreign keys. 
+When we join data, we are combining two or more related tables into a single view to add context to our data to generate more holistic insights. We use common attributes (or *columns*) to establish relationships between the tables, along with constraints that control how records (or *rows*) are matched between them. In SQL 101, we mentioned that these relationships are often (but not always) established using primary keys and foreign keys. The direction that we combine data in is from left to right, or *horizontally*, so our tables usually get wider since we add more columns. Joins say, <em>"Combine this data from left to right."</em>
+
+![Join between table A and Table B](../assets/simple-join.png)
 
 There are four fundamental join types that you should know about in SQL - `INNER`, `LEFT`, `RIGHT`, and `FULL OUTER` joins. Each join type provides slightly different results, and you select the type to use based on what your analysis calls for. Other join types that you should be aware of are the [`CROSS`, `SELF`, and `NATURAL` joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k). We will not cover these last three types explicitly, but we encourage you to read about them on your own time.
+
+[Back to top](#table-of-contents)
+
+## What are unions and why do we use them?
+
+Along with joins, another operation that is used to combine data are unions. But what exactly are unions?
+
+When we join data, we are typically combining two tables together *horizontally*, meaning that when we join the data our result set gets wider because we're adding more columns.  Unions, on the other hand, let us combine two tables together *vertically* - they say, <em>"Combine this data from top to bottom."</em> In other words, **joins combine tables to add more columns to our data while unions combine tables to add more rows.**
+
+![Simple Union Visual](../assets/simple-union.png)
+
+Both unions and joins can be used to add more context to your data. Unions are best to use when you have data from two very similar tables that can be combined into a single view. Using our fictional restaurant again as an example, there is a `Dishes` table that has the main menu items and a `NewDishes` table which has dishes that are NOT in the menu yet. We can use `UNION` to show us all the current and new dishes together instead of in separate tables. This will let us get a more holistic view of the restaurant's offerings.
+
+We will revisit this example and walk you through a `UNION` query in the [`Practical Union Scenario` section below.](#a-walkthrough-of-a-practical-union-example)
+
+[Back to top](#table-of-contents)
 
 ### A hypothetical join scenario
 
@@ -61,7 +83,7 @@ Next, we would create some constraint that determines which rows from the `Custo
 The query for this example would look like:
 
 ```sql
-SELECT C.State, COUNT(R.ReservationID) AS total_reservations -- We are counting the number of reservations by each state
+SELECT C.State, COUNT(R.ReservationID) AS TotalReservations -- We are counting the number of reservations by each state
 FROM Reservations AS R -- The 'Reservations' table is on the "left-side" of the join. We give it an alias of 'R'
 INNER JOIN Customers AS C -- The 'Customers' table is on the "right-side" of the join. We give it an alias of 'C'
 ON R.CustomerID=C.CustomerID -- This is our constraint saying "Only give me the rows where the customer id in 'Orders' matches the id in 'Customers'" 
@@ -70,9 +92,18 @@ ORDER BY total_reservations DESC -- Since we want to know which states have the 
 LIMIT 5 -- We only want to see the 5 states with the most reservations, so we limit our results to the first 5 rows
 ```
 
-This is slightly more complex query than what you may be used to writing coming from SQL 101, but [we will break this down line-by-line a little later on.](#a-walkthrough-of-a-practical-join-example). 
+This is slightly more complex query than what you may be used to writing coming from SQL 101, but [we will break this down line-by-line a little later on.](#a-walkthrough-of-a-practical-join-example)
 
 First, we'll introduce you to the basics of joins using simpler examples. Then we'll come return to this more "real world" example and break down how it works. 
+
+> **Extra Context:** <em>Code Comments</em>
+>
+> You may have noticed that we used "`--`" followed by some text in the query above. These lines of text are called "comments", which are notes in the code written by the developer to
+communicate what a particular line or section of code means. All coding languages have a way for developers to leave these comments in their code so that they can
+let future readers understand their thought process and why something was done.
+>
+> We use a comment symbol to let the computer know that "this is not code, so don't execute it!" Each programming language will have its own symbol for comments. In SQL, it is most common
+to use "`--`" for a single-line comment. Check the documentation for the SQL dialect you are using to be sure, though! 
 
 [Back to top](#table-of-contents)
 
@@ -89,14 +120,12 @@ Let's assume that we have two tables - `A` and `B` - that we want to join togeth
 Here is what that query would look like:
 
 ```SQL
-SELECT
-    A.column1,
-    B.column1
+SELECT *
 FROM A -- This is the table on the "left-side" of the join
 -- Specifying the join type
 INNER JOIN B -- This is the table on the "right-side" of the join
 -- Specifying the join column (`column1`) and constraint (`=`)
-ON A.column1=B.column1 
+ON A.ID=B.ID 
 ```
 
 This is a visual representation of which rows will be returned between the two tables after the join:
@@ -104,6 +133,8 @@ This is a visual representation of which rows will be returned between the two t
 **What gets matched between the two tables**
 
 ![Inner Join](https://www.codeproject.com/KB/database/Visual_SQL_Joins/INNER_JOIN.png)
+
+![Inner Join Result](../assets/simple-inner-join.png)
 
 As you can see, we're keeping only the rows between the two tables that match based on our join columns and constraints. These query results will only include the rows that match our constraints while dropping the rest of the rows that don't match. 
 
@@ -205,9 +236,13 @@ By and large, the majority of your joins in practice will either be an `INNER JO
 
 ## A Walkthrough of a Practical `JOIN` Example
 
+### Scenario
+
 Remember our hypothetical join scenario and the complex query we wrote from earlier? Now that you have some more exposure to joins, let's revisit this query line-by-line. First, let's reiterate the question and the query:
 
 **Question:** <em>"What are the top 5 states that our most frequent customers come from?"</em>
+
+### Example of `JOIN` query
 
 **Query:**
 ```sql
@@ -220,7 +255,13 @@ ORDER BY total_reservations DESC -- Since we want to know which states have the 
 LIMIT 5 -- We only want to see the 5 states with the most reservations, so we limit our results to the first 5 rows
 ```
 
-Let's step through each line together and break down what's happening:
+### Breakdown of `JOIN` query
+
+Here is a visual breakdown of how the query is being executed and what's happening:
+
+![Practical Inner Join Example Flowchart](../assets/inner-join-practical-example.png)
+
+Now that we can see what's happening to each table, let's step through each line of the query together and break down how it all works:
 
 ```sql
 SELECT C.State, COUNT(R.ReservationID) AS total_reservations
@@ -265,6 +306,17 @@ Here, since the question asks us to only show the top 5 states in our results, w
 This was a complex query that answered a very practical question for our restaurant! It demonstrates how we can combine the querying concepts that we have learned so far to answer more and more sophisticated questions from the data. 
 
 Also, consider the fact that you would not be able to answer this question using either `Customers` or `Reservations` alone. It was only after combining them that you were able to get deeper insights. That's a large part of why joins are useful and often necessary.
+
+### Recap on `JOIN` queries
+
+Let's sum up what we've covered so far for joins:
+
+- Joins allow us to combine data *horizontally* by adding new columns from other tables
+- There are four fundamental types we should know: `INNER`, `LEFT`, `RIGHT`, and `FULL OUTER`
+- Each type has slightly different rules for what rows will be included in the query results
+- `INNER JOIN` keeps only the rows that are matched between the two tables in the final result
+- `LEFT JOIN` keeps everything from the "left-side" of the join and only includes rows from the "right-side" that have a match; Rows that aren't matched to the "left-side" are filled with NULL values
+- `INNER` and `LEFT` join are the two most common query types in practice - know them well!
 
 Now we'll continue on to the other two fundamental joins you should know: `RIGHT` and `FULL OUTER` joins.
 
@@ -324,7 +376,99 @@ To sum things up, you should always attempt to find any documentation available 
 
 [Back to top](#table-of-contents)
 
+## A Walkthrough of a Practical `UNION` Example
+
+### Scenario
+
+Let's walk through a practical scenario where we can use `UNION` to help us combine data. There are two tables in our database that hold information our restaurant's menu items - `Dishes` and `NewDishes`. `Dishes` holds data about the items that are currently on our menu; `NewDishes` has data about items that are not on the menu yet, but could be. 
+
+The restaurant owners tell us that they are planning on making some changes to the menu next month. They want to replace all of the appetizers in the current menu with new ones from the `NewDishes` table. 
+
+### `UNION` query example
+
+To help the restaurant create their new menu, we'll **write a query that combines only the appetizers from `NewDishes` and all of the dishes <em>other than appetizers</em> from `Dishes`**:
+
+```sql
+-- The first query that gets the appetizers from NewDishes
+SELECT Name, Price, Type -- We are selecting just the name, price, and type of the dish. For UNION queries, the columns you select and their order matter
+FROM NewDishes
+WHERE Type='Appetizer' -- We are filtering for just the appetizers from NewDishes
+UNION -- Here we using the UNION keyword to say "Create a UNION between the top query and the query immediately following
+-- This is the second query that gets all the dishes other than appetizers from Dishes
+SELECT Name, Price, Type -- Again, selecting the same columns that we did for the first query and in the same order - THIS IS IMPORTANT!
+FROM Dishes
+WHERE Type<>'Appetizer' -- Filtering for all dishes other than Appetizers
+```
+
+`Output (first 5 rows only):`
+
+| Name                     | Price | Type      |
+|--------------------------|-------|-----------|
+| Avocado Pesto Bruschetta | 8.00  | Appetizer |
+| Zucchini Fritters        | 9.00  | Appetizer |
+| Stuffed Bell Peppers     | 7.00  | Appetizer |
+| Pumpkin Hummus Platter   | 9.99  | Appetizer |
+| French Onion Soup        | 7.00  | Main      |
+
+### Breakdown - `UNION` query
+
+Here's a visual representation of how this query works:
+
+![A visual representing the practical union example](../assets/union-practical-example.png)
+
+Let's break down what's happening in here step-by-step:
+
+First, you might notice that we're actually using two separate queries. This is exactly how we write `UNION` queries - by combining the results of two queries on top of each other. We'll start with the first part:
+
+```sql
+SELECT Name, Price, Type
+FROM NewDishes
+WHERE Type='Appetizer'
+```
+
+We'll call this part of the query the "top query." It is simply a `SELECT` query on a single table with a filter. We are querying the `NewDishes` table and filtering for only the `Appetizer` dishes. 
+
+It's important to note both the columns that are being selected and their order - these are critical to `UNION` queries. For the results of both the top and bottom queries to align, **the columns you select must have the same data type and be in the same order in both queries**. You'll see that we use columns with the same data type and in the same order for the "bottom query." 
+
+Also, **each query (both top and bottom) must select the same *number* of columns** as well. You can't have one query select five columns and the other select four - that is an error.  
+
+```sql
+UNION
+```
+
+Here is our new clause - `UNION`. By including `UNION` after our "top query", we are saying, **<em>"Combine the results from the query on top with the results from the query on the bottom"</em>**
+
+Another important distinction to make here is that by saying `UNION`, we are also telling SQL that we **don't want duplicate values in our final query result.** If we instead didn't need to remove duplicates, we could use `UNION ALL` instead, which leaves in the duplicate rows between the top and bottom query.
+
+> **Pro-Tip:** While using just `UNION` is handy when we don't want duplicate rows in our results, it can cause performance issues when we are working with larger data sets. It is similar to the `DISTINCT` operation and should be used sparingly. If performance becomes an issue (e.g. query takes too long to run), switch to using `UNION ALL` - you'll get duplicate rows but your query will run faster. Whether or not to make the tradeoff on performance vs. convenience is a judgement call you will have to make depending on your situation.   
+
+```sql
+SELECT Name, Price, Type
+FROM Dishes
+WHERE Type<>'Appetizer'
+```
+
+We'll call this part the "bottom query". In it, we're saying, <em>"Give me all the dishes in the Dishes table that aren't appetizers"</em> since we want to replace the current appetizers with the ones found in `NewDishes`. Again, we select columns that match both the data type and order of the columns from the "top query". 
+
+### Recap on `UNION` query
+
+To sum everything on `UNION` queries up so far: 
+
+- `UNION` queries allow us to combine data *vertically* instead of *horizontally* (like joins)
+- To write `UNION` queries, we combine the results of two queries using the `UNION` clause
+- The two queries must follow these rules:
+    - The columns in both queries must have the same data types
+    - The columns in both queries must be in the same order in each
+    - Each query must select the same number of columns
+
+- `UNION` by itself tells SQL to remove duplicate values in the final result; `UNION ALL` keeps the duplicate values
+- `UNION` is a more "expensive" operation than `UNION ALL` and should be used sparingly; This depends on your use case and how much data you are working with
+
+[Back to top](#table-of-contents)
+
 ## Summary
+
+We use both joins and unions to combine data. Joins let us combine data *horizontally* by adding more columns. Unions, on the other hand, let us combine data *vertically* by adding more rows. 
 
 Overall, there are **four join types** that you should know well:
 
@@ -336,7 +480,11 @@ Overall, there are **four join types** that you should know well:
 
 - `FULL OUTER JOIN`: Keep all records between both tables, but only show the values that match my constraint. All other records that don't match will be included, but those values will be set to null.
 
-Now you know the theory behind the most fundamental types of joins in SQL. In the theory section of 102, you will use everything you learned here and apply it to write queries to help you generate more insights for our fictional restaurant. 
+There are **two types of `UNION` queries** you should know:
+- `UNION ALL`: All results from tables in the `UNION` are included, even if there are duplicate rows
+- `UNION`: Removes all duplicate rows from the `UNION` of the tables
+
+Now you know the theory behind unions and the most fundamental types of joins in SQL. In the theory section of 102, you will use everything you learned here and apply it to write queries to help you generate more insights for our fictional restaurant. 
 
 The join types mentioned here are the most important to know, but there are a few more join types that you may come across. There are some more advanced joins, like [cross-joins, natural joins, and self-joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k) that you should eventually become familiar with as you enhance your skills and understanding.
 

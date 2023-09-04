@@ -2,6 +2,8 @@
 
 By: Martin Arroyo
 
+*Estimated Reading Time:* **<em>26 minutes</em>**
+
 ### Table of Contents:
 
 * [**Introduction: Combining Data - Joins and multiple tables**](#introduction-combining-data---joins-and-multiple-tables)
@@ -10,6 +12,8 @@ By: Martin Arroyo
     - [**A hypothetical join scenario**](#a-hypothetical-join-scenario)
 
 * [**What are unions and why do we use them?**](#what-are-unions-and-why-do-we-use-them)
+
+* [**<em>Comprehension Check</em> - Join and Union Basics**](#comprehension-check---join-and-union-basics)
 
 * [**`INNER JOIN` - Working together through an example of the most common join**](#inner-join---working-together-through-an-example-of-the-most-common-join)
     - [**Join Syntax**](#join-syntax)
@@ -20,6 +24,8 @@ By: Martin Arroyo
     - [**Caveats**](#caveats)
     - [**When do I use one over the other?**](#when-do-i-use-one-over-the-other)
     - [**Practical Usage**](#practical-usage)
+
+* [**<em>Comprehension Check</em> - Using Joins in Practice: `INNER` and `LEFT` Joins](#comprehension-check---using-joins-in-practice-inner-and-left-joins)
 
 * [**A Walkthrough of a Practical `JOIN` Example**](#a-walkthrough-of-a-practical-join-example)
 
@@ -32,6 +38,8 @@ By: Martin Arroyo
 * [**A Walkthrough of a Practical `UNION` Example**](#a-walkthrough-of-a-practical-union-example)
 
 * [**Summary**](#summary)
+
+* [**<em>Final Comprehension Check</em> - Combining Data Using `JOIN` and `UNION`**](#final-comprehension-check---combining-data-using-join-and-union)
 
 
 ## Introduction: Combining Data - Joins and multiple tables
@@ -69,6 +77,42 @@ Both unions and joins can be used to add more context to your data. Unions are b
 We will revisit this example and walk you through a `UNION` query in the [`Practical Union Scenario` section below.](#a-walkthrough-of-a-practical-union-example)
 
 [Back to top](#table-of-contents)
+
+---
+
+### **<em>Comprehension Check</em> - Join and Union Basics**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. Why is understanding joins crucial for working with databases?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Understanding joins is crucial because databases generally have more than one table and joins allow us to combine data from these tables to generate deeper insights.</p>
+</details>
+
+
+*2. What are the four fundamental join types discussed?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>The four fundamental join types discussed are INNER, LEFT, RIGHT, and FULL OUTER joins.</p>
+</details>
+
+
+*3. In what direction does a join combine data?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Joins combine data from left to right, or horizontally.</p>
+</details>
+
+*4. How do unions differ from joins in terms of the direction of data combination?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Unlike joins that combine tables horizontally, unions combine tables vertically.</p>
+</details>
+
+[Back to top](#table-of-contents)
+
+---
 
 ### A hypothetical join scenario
 
@@ -233,6 +277,48 @@ Whether to use an `INNER JOIN` or a `LEFT JOIN` is something you must consider f
 By and large, the majority of your joins in practice will either be an `INNER JOIN` or a `LEFT JOIN`. It is worth it to learn them well and become really comfortable with using them, as well as knowing when to use them. The other joins mentioned are not used as much in practice, but it's good to know about them - especially for technical interviews!
 
 [Back to top](#table-of-contents)
+
+---
+
+### **<em>Comprehension Check</em> - Using Joins in Practice: `INNER` and `LEFT` Joins**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What does an `INNER JOIN` do in SQL?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>An `INNER JOIN` in SQL returns only the rows from both tables that match the specified constraints.</p>
+</details>
+
+
+*2. Is it necessary to specify the `INNER` keyword when performing an inner join?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p> It's not strictly necessary to specify the `INNER` keyword; you can simply use `JOIN`. However, it is good practice to be explicit.</p>
+</details>
+
+
+*3. How do you specify the columns and constraints for joining two tables?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>To specify the columns and constraints, we use the `ON` keyword followed by {First Table.Column to join on} {constraint} {Second Table.Column to join on}, such as `ON Company.company_id=Foods.company_id`.</p>
+</details>
+
+*4. What is the primary difference between an `INNER JOIN` and a `LEFT JOIN`?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>An INNER JOIN returns only the rows that match from both tables, while a LEFT JOIN returns all the rows from the left-side table and only the matching rows from the right-side table. Unmatched rows from the right-side table will have NULL values.</p>
+</details>
+
+*5. How can you tell which table is on the "left-side" of the join and which is on the "right-side"?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>The table that comes after the `FROM` clause in your query is the "left-side" table; the table that comes after the `JOIN` type is the "right-side"</p>
+</details>
+
+[Back to top](#table-of-contents)
+
+---
 
 ## A Walkthrough of a Practical `JOIN` Example
 
@@ -489,3 +575,43 @@ Now you know the theory behind unions and the most fundamental types of joins in
 The join types mentioned here are the most important to know, but there are a few more join types that you may come across. There are some more advanced joins, like [cross-joins, natural joins, and self-joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k) that you should eventually become familiar with as you enhance your skills and understanding.
 
 [Back to top](#table-of-contents)
+
+### **<em>Final Comprehension Check</em> - Combining Data Using `JOIN` and `UNION`**
+
+Answer the questions below to check your understanding of what we have covered so far. Try to answer the questions first before looking at the answers:
+
+*1. What is the primary difference between joins and unions in SQL?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Joins combine data horizontally by adding more columns, while unions combine data vertically by adding more rows.</p>
+</details>
+
+
+*2. What is the key difference between `INNER JOIN` and `LEFT JOIN`?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>`INNER JOIN` keeps only the records that match the constraint between the two tables, while `LEFT JOIN` keeps all the records from the left-side table and only the matching records from the right-side table.</p>
+</details>
+
+
+*3. What does `RIGHT JOIN` do?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>`RIGHT JOIN` is the opposite of `LEFT JOIN`. It keeps all the records from the right-side table and only the matching records from the left-side table. Unmatched records from the left-side table will have `NULL` values.</p>
+</details>
+
+*4. Describe the difference between `UNION ALL` and `UNION.`*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>`UNION ALL` includes all results, even if there are duplicate rows. `UNION` removes all duplicate rows from the result set.</p>
+</details>
+
+*5. What are some advanced joins that you should eventually become familiar with?*
+<details>
+    <summary>Click to reveal the answer</summary>
+    <p>Some more advanced joins include cross-joins, natural joins, and self-joins.</p>
+</details>
+
+[Back to top](#table-of-contents)
+
+---

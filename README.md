@@ -23,15 +23,13 @@ The practice section of each course is built using Jupyter Notebooks - a rich, m
 
 You will be connected to an actual RDBMS in these notebooks and will run your queries inside of the notebook. Instructions on how to run your queries are included in the first section of each notebook. To open the notebooks, simply click the ![Open in Colab Button](https://colab.research.google.com/assets/colab-badge.svg) button next to each notebook.
 
-If you have never heard of a Jupyter Notebook and don't know how they work, we suggest you watch this video first: 
+If you have never heard of a Jupyter Notebook and don't know how they work, we suggest you [watch this video first.](https://www.youtube.com/embed/eJDxcR1V7Qg?si=SRxRgxf7jPya-3Vd)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eJDxcR1V7Qg?si=SRxRgxf7jPya-3Vd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **SQL Cheatsheet**
 
 We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/) to use as a companion to the notebooks and lessons. It was made the cheat sheet with the lesson content in SQL 101 and 102 in mind.
 
-You can open the notebooks directly in Google Colab by using the links below next to the notebook title:
 
 ## **SQL 101 - Introduction to Databases and Querying**
 

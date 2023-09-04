@@ -30,6 +30,7 @@ If you have never heard of a Jupyter Notebook and don't know how they work, we s
 
 We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/) to use as a companion to the notebooks and lessons. It was made the cheat sheet with the lesson content in SQL 101 and 102 in mind.
 
+---
 
 ## **SQL 101 - Introduction to Databases and Querying**
 
@@ -45,6 +46,7 @@ Topics Covered:
 - Filtering data (`WHERE`/`HAVING`)
 - Sorting data (`ORDER BY`)
 - Aggregating/Summarizing data (`GROUP BY`, `AVG`, `COUNT`, `SUM`)
+
 ---
 
 ## **SQL 102 - Intermediate Queries and Combining Data** 

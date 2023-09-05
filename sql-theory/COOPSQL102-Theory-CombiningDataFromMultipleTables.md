@@ -25,7 +25,7 @@ By: Martin Arroyo
     - [**When do I use one over the other?**](#when-do-i-use-one-over-the-other)
     - [**Practical Usage**](#practical-usage)
 
-* [**<em>Comprehension Check</em> - Using Joins in Practice: `INNER` and `LEFT` Joins](#comprehension-check---using-joins-in-practice-inner-and-left-joins)
+* [**<em>Comprehension Check</em> - Using Joins in Practice: `INNER` and `LEFT` Joins**](#comprehension-check---using-joins-in-practice-inner-and-left-joins)
 
 * [**A Walkthrough of a Practical `JOIN` Example**](#a-walkthrough-of-a-practical-join-example)
 
@@ -241,13 +241,13 @@ As you can see, one row in each of the tables gets dropped from the final result
 
 ## `LEFT JOIN`
 
-A `LEFT JOIN` is the other most common join after `INNER JOIN`. The difference between the two is how the rows are matched in the query result. While an `INNER JOIN` includes only the rows that match from both tables, a `LEFT JOIN` will keep all the rows from the left-side of the join and only those that match from the right-side. When this happens, instead of dropping those records like the `INNER JOIN`, any values in unmatched rows are set to `NULL`. Visually, the matched rows will look like this:
+A `LEFT JOIN` is the other most common join after `INNER JOIN`. The difference between the two is how the rows are matched in the query result. While an `INNER JOIN` includes only the rows that match from both tables, a `LEFT JOIN` will keep all the rows from the left-side of the join and only those that match from the right-side. When this happens, instead of dropping those rows like the `INNER JOIN`, any values in unmatched rows are set to `NULL`. Visually, the matched rows will look like this:
 
 ![Left Join](../assets/left-join-company-foods.png)
 
 ![Left Join Company-Foods Tables](../assets/left-join-company-foods-table.png)
 
-If you're new to `LEFT JOIN`, you're probably wondering what was meant before by "left-side of the join." Visually, we can see that there is a table on the left side that has all of the records included with only the records at the intersection included from the right. But how does that translate to an actual query?
+If you're new to `LEFT JOIN`, you're probably wondering what was meant before by "left-side of the join." Visually, we can see that there is a table on the left side that has all of the rows included with only the rows at the intersection included from the right. But how does that translate to an actual query?
 
 ```SQL
 SELECT *
@@ -266,11 +266,11 @@ Simply put, the table on the "left" of a join type is the one used in the `FROM`
 
 Looking at the result of the two queries, you should notice that the `LEFT JOIN` query gave you an extra record that was missing from the `INNER JOIN` query. The `sip-n-Bite` company is missing from our first query. Why?
 
-Well, we know that we joined the two tables together based on matching `company_id`. We also know that `INNER JOIN` only keeps records from both tables that match. Since we know that the record exists in the `company` table, that must mean that there is no record for the `sip-n-Bite` company in the `foods` table. You can confirm this by looking at the `foods` table and querying for `company_id=19`, which will return no result since it doesn't exist.
+Well, we know that we joined the two tables together based on matching `company_id`. We also know that `INNER JOIN` only keeps rows from both tables that match. Since we know that the record exists in the `company` table, that must mean that there is no record for the `sip-n-Bite` company in the `foods` table. You can confirm this by looking at the `foods` table and querying for `company_id=19`, which will return no result since it doesn't exist.
 
 ### When do I use one over the other?
 
-Whether to use an `INNER JOIN` or a `LEFT JOIN` is something you must consider for your particular use case. Do you only want to consider the records that match between your tables? Then choose an `INNER JOIN`. Want to make sure that records are kept from the left side of the join? Then - you guessed it - use a `LEFT JOIN`.
+Whether to use an `INNER JOIN` or a `LEFT JOIN` is something you must consider for your particular use case. Do you only want to consider the rows that match between your tables? Then choose an `INNER JOIN`. Want to make sure that rows are kept from the left side of the join? Then - you guessed it - use a `LEFT JOIN`.
 
 ### Practical Usage
 
@@ -412,7 +412,7 @@ Now we'll continue on to the other two fundamental joins you should know: `RIGHT
 
 As mentioned earlier, `RIGHT JOIN` is rarely used in practice. This is because you can do the same thing using just a `LEFT JOIN`, so there aren't many (if any) use cases where you would want to exclusively use it. However, it is a join type to be aware of and is commonly asked about in interviews, so let's cover it.
 
-The opposite of the `LEFT JOIN`, `RIGHT JOIN` includes all the records from the "right-side" of the join and only records that match from the "left-side". Also, similar to `LEFT JOIN`, values in records from the other side of the join that don't match are set to `null` and included in our query results. Visually, the resulting matches look like this:
+The opposite of the `LEFT JOIN`, `RIGHT JOIN` includes all the rows from the "right-side" of the join and only rows that match from the "left-side". Also, similar to `LEFT JOIN`, values in rows from the other side of the join that don't match are set to `null` and included in our query results. Visually, the resulting matches look like this:
 
 ![Right Join](../assets/right-join-company-foods.png)
 
@@ -433,7 +433,7 @@ Syntactically, it is almost identical to the other joins. Let's run a `RIGHT JOI
 
 ## `FULL OUTER JOIN`
 
-`FULL OUTER JOIN` is another join type that isn't used as often as left or inner joins in practice, but it is much more common than the `RIGHT JOIN`. We use `FULL OUTER JOIN` when we want to include all the records from both sides of the join, showing the records that match between the two and otherwise giving null values where there isn't a match between the tables. A `FULL OUTER JOIN` is like a combination of both the left and right join types.
+`FULL OUTER JOIN` is another join type that isn't used as often as left or inner joins in practice, but it is much more common than the `RIGHT JOIN`. We use `FULL OUTER JOIN` when we want to include all the rows from both sides of the join, showing the rows that match between the two and otherwise giving null values where there isn't a match between the tables. A `FULL OUTER JOIN` is like a combination of both the left and right join types.
 
 Here is how the matching looks visually:
 
@@ -558,19 +558,19 @@ We use both joins and unions to combine data. Joins let us combine data *horizon
 
 Overall, there are **four join types** that you should know well:
 
-- `INNER JOIN`: Only keep the records that match the constraint between the two tables
+- `INNER JOIN`: Only keep the rows that match the constraint between the two tables
 
-- `LEFT JOIN`: Keep all the records from the left-side of the join, and only show values for the records on the right-side that matched. Any values from the right-side that weren't matched will be assigned a `null` value.
+- `LEFT JOIN`: Keep all the rows from the left-side of the join, and only show values for the rows on the right-side that matched. Any values from the right-side that weren't matched will be assigned a `null` value.
 
-- `RIGHT JOIN`: The opposite of the `LEFT JOIN` - keep all the records from the right-side of the join and only show values for the records on the left-side that matched. Any values from the left-sie that weren't matched will be assigned a `null` value.
+- `RIGHT JOIN`: The opposite of the `LEFT JOIN` - keep all the rows from the right-side of the join and only show values for the rows on the left-side that matched. Any values from the left-sie that weren't matched will be assigned a `null` value.
 
-- `FULL OUTER JOIN`: Keep all records between both tables, but only show the values that match my constraint. All other records that don't match will be included, but those values will be set to null.
+- `FULL OUTER JOIN`: Keep all rows between both tables, but only show the values that match my constraint. All other rows that don't match will be included, but those values will be set to null.
 
 There are **two types of `UNION` queries** you should know:
 - `UNION ALL`: All results from tables in the `UNION` are included, even if there are duplicate rows
 - `UNION`: Removes all duplicate rows from the `UNION` of the tables
 
-Now you know the theory behind unions and the most fundamental types of joins in SQL. In the theory section of 102, you will use everything you learned here and apply it to write queries to help you generate more insights for our fictional restaurant. 
+Now you know the theory behind unions and the most fundamental types of joins in SQL. In the practice section of 102, you will use everything you learned here and apply it to write queries to help you generate more insights for our fictional restaurant. 
 
 The join types mentioned here are the most important to know, but there are a few more join types that you may come across. There are some more advanced joins, like [cross-joins, natural joins, and self-joins](https://www.linkedin.com/pulse/what-difference-between-natural-joincross-join-self-madhu-mitha-k) that you should eventually become familiar with as you enhance your skills and understanding.
 
@@ -590,14 +590,14 @@ Answer the questions below to check your understanding of what we have covered s
 *2. What is the key difference between `INNER JOIN` and `LEFT JOIN`?*
 <details>
     <summary>Click to reveal the answer</summary>
-    <p>`INNER JOIN` keeps only the records that match the constraint between the two tables, while `LEFT JOIN` keeps all the records from the left-side table and only the matching records from the right-side table.</p>
+    <p>`INNER JOIN` keeps only the rows that match the constraint between the two tables, while `LEFT JOIN` keeps all the rows from the left-side table and only the matching rows from the right-side table.</p>
 </details>
 
 
 *3. What does `RIGHT JOIN` do?*
 <details>
     <summary>Click to reveal the answer</summary>
-    <p>`RIGHT JOIN` is the opposite of `LEFT JOIN`. It keeps all the records from the right-side table and only the matching records from the left-side table. Unmatched records from the left-side table will have `NULL` values.</p>
+    <p>`RIGHT JOIN` is the opposite of `LEFT JOIN`. It keeps all the rows from the right-side table and only the matching rows from the left-side table. Unmatched rows from the left-side table will have `NULL` values.</p>
 </details>
 
 *4. Describe the difference between `UNION ALL` and `UNION.`*

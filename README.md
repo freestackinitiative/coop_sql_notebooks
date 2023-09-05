@@ -15,7 +15,7 @@ Here is a breakdown of the classes:
 
 Each class (SQL 101 & 102) has both a `Theory` section and a `Practice` section. In the theory section, you will read about fundamental concepts such as how databases work and how SQL works. Then, in the practical section, you will learn how to write queries to retrieve and analyze data from a database. 
 
-You should start with the theory section first, then move on to the practice sections. The classes are structured so that the practice sections build on the theory we teach you with practical applications. The classes should also be done in order - start with the 101 theory section, then the practice section, before moving on to 102.
+You should start with the theory section first, then move on to the practice sections. The classes are structured so that the practice sections build on the theory we teach you with practical applications. The classes should also be done in order: start with the 101 theory section first - then do the practice section - before moving on to 102.
 
 ### Jupyter Notebooks - Our "Database Environment"
 

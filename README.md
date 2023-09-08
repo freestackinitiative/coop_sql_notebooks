@@ -53,16 +53,15 @@ Topics Covered:
 
 **Theory Section:** [Combining Data From Multiple Tables](sql-theory/COOPSQL102-Theory-CombiningDataFromMultipleTables.md) 
 
-**Practice Section - Intermediate Queries Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_102.ipynb">
+**Practice Section - Intermediate Queries Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/2.0/COOP_SQL_102_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
 Topics Covered:
 
-- Combining Data (`INNER`, `LEFT`, `RIGHT`, `FULL OUTER` joins)
-- Intermediate Queries and Scalar functions (Using the `CASE` statement, `ROUND`, `DATEDIFF`, etc.)
+- `CASE` Statements
+- Combining Data (`UNION`, INNER`, `LEFT`, `RIGHT`, `FULL OUTER` joins)
 - Subqueries & Common Table Expressions (CTE)
-- Window/Analytical functions (`ROW_NUMBER`, `RANK`, `DENSE RANK`)
 
 --- 
 

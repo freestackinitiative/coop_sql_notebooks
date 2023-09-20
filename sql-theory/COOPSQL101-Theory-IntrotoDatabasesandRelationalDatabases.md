@@ -1,4 +1,4 @@
-# SQL 101 - Intro to Databases and Querying
+# Database Crash Course - Introduction to Relational Databases and SQL
 
 By: Martin Arroyo
 
@@ -27,13 +27,11 @@ By: Martin Arroyo
 
 ## **Introduction**
 
-Welcome to **SQL 101 - Introduction to Databases and Querying**! In this class, we will cover some of the highlights of the theory behind relational databases as well as introduce you to common SQL query patterns and concepts that you should know to be successful in many analytics roles. The focus of this class is to provide you with a foundational framework to understand how databases work, their importance in today's digital world, and how these concepts are applied on-the-job.
-
-First, we'll start by providing an overview of the theory and concepts behind relational databases. Then we introduce you to SQL, the language of data. We teach you how to write basic data retrieval queries, as well as how to process and summarize data. 
+Welcome to the **Database Crash Course - Introduction to Relational Databases and SQL**! In this course, we will cover some of the highlights of the theory behind relational databases as well as introduce you to Structured Query Language (SQL). The focus of this class is to provide you with a foundational framework to understand how databases work, their importance in today's digital world, and how these concepts are applied on-the-job. 
 
 The content that we cover here is typically delivered over the course of an entire semester at most universities. Our aim is to introduce you to the important concepts that you'll need to know to be effective on the job. This means that we will not go into as much depth as a university course when it comes to theory. We include links to external resources that cover those topics at length to help enhance your study. While being effective is great, you can greatly enhance your effectiveness by understanding the theory behind things. We hope that this material sparks an interest in you to study databases further.
 
-You will come away from this class (as well as the subsequent 102 class) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
+You will come away from this class (as well as the subsequent classes) with a better understanding of databases, practical SQL skills to write basic to complex queries, and the excitement to learn more!
 
 [Back to top](#table-of-contents)
 
@@ -360,6 +358,6 @@ We have only scratched the surface of the topics that were introduced here. Ther
 - [Primary Keys and Foreign Keys Explained](https://youtu.be/B5r8CcTUs5Y?si=asEl57bsIEVpghrE)
 - [SQL Tutorial - Full Database Course for Beginners (Offered through `freecodecamp`)](https://youtu.be/HXV3zeQKqGY?si=kXKxJS0quRQYpZoPs)
 
-The rest of the material in SQL 101 is devoted to helping you master the basics of SQL querying. These skills will be applicable to just about any version of the language you may encounter.
+The material in SQL 101 is devoted to helping you master the basics of SQL querying. These skills will be applicable to just about any version of the language you may encounter.
 
 [Back to top](#table-of-contents)

@@ -1,4 +1,4 @@
-# SQL 102 - Intermediate Queries
+# Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`
 
 By: Martin Arroyo
 
@@ -44,15 +44,17 @@ By: Martin Arroyo
 
 ## Introduction: Combining Data - Joins and multiple tables
 
-Welcome to **SQL 102 - Intermediate SQL Queries**! In **SQL 101 - Introduction to Databases and Querying**, you learned how to write queries that selected, filtered, aggregated, and ordered data from a single table. In this class, we are going to add to your SQL toolbox by teaching you how to combine data from multiple tables to generate deeper insights. You will also learn more advanced querying techniques, such as using more advanced functions, subqueries, and more!
+Welcome to the **Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**! In **SQL 101 - Introduction to Databases and Querying**, you learned how to write queries that selected, filtered, aggregated, and ordered data from a single table. In this class, we are going to add to your SQL toolbox by teaching you how to combine data from multiple tables to generate deeper insights. You will also learn more advanced querying techniques, such as using more advanced functions, subqueries, and more!
 
-In this theory section, we will cover what you should know about joins and unions in SQL. Understanding how to combine data from multiple tables is crucial to being able to work with data in a database, since you will mostly be dealing with more than just one table. Joins are also one of the most common technical interview topics that you will encounter, so they are definitely something you should work on! 
+In this crash course, we will cover what you should know about joins and unions in SQL. Understanding how to combine data from multiple tables is crucial to being able to work with data in a database, since you will mostly be dealing with more than just one table. Joins are also one of the most common technical interview topics that you will encounter, so they are definitely something you should work on! 
 
 We will walk you through what joins and unions are and why we use them in this section. Then, in the following SQL 102 notebook, you will have plenty of practice writing your own queries to combine data. By the time you're finished, you'll know enough to nail any questions on joins in your next technical interview! 
 
 [Back to top](#table-of-contents)
 
 ## What are joins and why do we use them?
+
+> *Note: It may be useful to open SQL 101 alongside this reading to go over some of the examples and concepts*
 
 Databases generally have more than one table. And since databases store tables that are (generally) related to one another, we need a way to combine data from multiple tables. We're going to use our fictional restaurant database from SQL 101 as an example. You may recall that there is a `Customers` table which keeps track of our customer demographic information. There is also a `Reservations` table, which keeps tracks of reservations made by customers. If we want to answer a question like, <em>"What are the top 5 states that our all-time most frequent customers come from?"</em>, then we need to combine the data from those two tables.  
 

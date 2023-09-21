@@ -67,7 +67,6 @@ Topics Covered:
 - Selecting data (`SELECT`)
 - Filtering data (`WHERE`/`HAVING`)
 - Aggregating/Summarizing data (`GROUP BY`, `AVG`, `COUNT`, `SUM`)
-
 - Sorting data (`ORDER BY`)
 
 ---

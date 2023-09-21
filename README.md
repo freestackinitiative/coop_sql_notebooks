@@ -26,7 +26,7 @@ For most students, the following path through these courses is recommended:
 4. SQL 102 - Intermediate Queries and Combining Data (*~2.5 hours to complete*)
 5. SQL Murder Mystery
 
-The theory courses (1 & 3) will be assigned as pre-reading homework before the SQL 101 and 102 classes, respectively. You will work on SQL 101 and 102 (2 & 4) in class with your captains in class. Then, you will have a week to solve the SQL Murder Mystery (5) independently. 
+The theory courses (1 & 3) will be assigned as pre-reading homework before the SQL 101 and 102 classes, respectively. You will work on SQL 101 and 102 (2 & 4) with your captains in class. Then, you will have a week to solve the SQL Murder Mystery (5) independently. 
 
 ### Jupyter Notebooks - Our "Database Environment"
 

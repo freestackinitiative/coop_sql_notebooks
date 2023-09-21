@@ -9,7 +9,7 @@ Our classes can be broken down into two sections: **Theory** and **Practice**. T
 **Theory**
 
 - [**Database Crash Course - Introduction to Relational Databases and SQL**](#database-crash-course---introduction-to-relational-databases-and-sql) Learn the foundational theory behind relational databases and SQL. This crash course gives you the highlights from a university course in Databases that you should know in about 30 minutes. Go through this before completing `SQL 101`.
-- [**Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**]() A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. Prerequisite: You should have already gone through the Database Crash Course and SQL 101 before doing this.
+- [**Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**](#combining-data-in-sql-crash-course---how-to-use-join-and-union) A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. Prerequisite: You should have already gone through the Database Crash Course and SQL 101 before doing this.
 
 **Practice**
 

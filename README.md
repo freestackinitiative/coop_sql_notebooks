@@ -2,31 +2,35 @@
 
 ## About these classes
 
-Welcome to the new page for COOP Careers SQL Classes! You will find everything you need to follow along with the SQL content for the Data Analytics curriculum here. 
+Welcome to COOP Careers SQL Classes! You will find everything you need to follow along with the SQL content for the Data Analytics curriculum here. 
 
-Our classes can be broken down into two sections: **Theory** and **Practice**. The theory classes are crash courses on things you should know to understand how databases work, as well as how to use SQL. The practice classes are where you will practice your querying skills and complete your labs - it's the main material that your captains will use to teach SQL 101 and 102.
+Our classes can be broken down into two sections: **Theory** and **Practice**. The theory classes are crash courses on things you should know to understand how databases work, as well as how to use SQL. The practice classes are where you will get hands-on practice to develop your querying skills and complete your labs - it's the main material that your captains will use to teach SQL 101 - 103.
 
 **Theory**
 
 - [**Database Crash Course - Introduction to Relational Databases and SQL**](#database-crash-course---introduction-to-relational-databases-and-sql) Learn the foundational theory behind relational databases and SQL. This crash course gives you the highlights from a university course in Databases that you should know in about 30 minutes. Go through this before completing `SQL 101`.
-- [**Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**](#combining-data-in-sql-crash-course---how-to-use-join-and-union) A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. Prerequisite: You should have already gone through the Database Crash Course and SQL 101 before doing this.
+- [**Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**](#combining-data-in-sql-crash-course---how-to-use-join-and-union) A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. 
+
+  >**Prerequisite**: You should have already gone through the Database Crash Course and SQL 101 before doing this.
 
 **Practice**
 
 - [**SQL 101 - Introduction to Databases and Querying:**](#sql-101---introduction-to-databases-and-querying)  Apply the theory you learned in the Database Crash Course to learning how to write basic queries against single tables in a database.
-- [**SQL 102 - Intermediate Queries and Combining Data:**](#sql-102---intermediate-queries-and-combining-data) Refine the querying skills that you began developing in SQL 101 and learn how to combine data from multiple tables using joins. You'll learn the theory behind how joins work and more advanced querying techniques. After completing this course, you will be better prepared for entry-level SQL technical interview questions.
-- [**SQL Murder Mystery:**](#sql-murder-mystery) There's been a murder in SQL City and we need your SQL skills to help us find the killer! This is your chance to put the skills you learned in SQL 101 and 102 to the test and solve the mystery of who committed the murder in SQL City!
+- [**SQL 102 - Advanced Querying Techniques:**](#sql-102---advanced-querying-techniques) Refine the querying skills that you began developing in SQL 101 and learn advanced techniques to write more complex queries and improve your search results. Here you'll learn about using the `CASE` statement to add search conditions to your queries, how to use subqueries and common table expressions (CTEs) for multi-step queries, and we'll introduce you to the concept of window aggregation. With these techniques in your toolkit, you'll be able to write queries that answer more complex questions that are more likely to come up on the job.  
+- [**SQL 103 - Combining Data from Multiple Tables:**](#sql-103---combining-data-from-multiple-tables) Up to this point, you have only written queries that deal with a single table. But many real-world scenarios will require you to combine data from multiple tables to answer questions. Here, we'll teach you how to combine data from multiple tables using `joins`. You'll learn the theory behind how joins work, the different methods of joining data, and when to use each one. After completing this course, you will be better prepared for entry-level SQL technical interview questions.
+- [**SQL Murder Mystery:**](#sql-murder-mystery) There's been a murder in SQL City and we need your SQL skills to help us find the killer! This is your chance to put the skills you learned in SQL 101 to 103 to the test and solve the mystery of who committed the murder in SQL City!
 
 ## How this works
 
 For most students, the following path through these courses is recommended:
 1. Database Crash Course - Introduction to Relational Databases and SQL (*~30 minutes to complete*)
 2. SQL 101 - Introduction to Databases and Querying (*~2.5 hours to complete*)
-3. Combining Data in SQL Crash Course - How to use `JOIN` and `UNION` (*~30 minutes to complete*)
-4. SQL 102 - Intermediate Queries and Combining Data (*~2.5 hours to complete*)
-5. SQL Murder Mystery
+3. SQL 102 - Advanced Querying Techniques (*~2 hours to complete*)
+4. Combining Data in SQL Crash Course - How to use `JOIN` and `UNION` (*~30 minutes to complete*)
+5. SQL 103 - Combining Data from Multiple Tables (*~2.5 hours to complete*)
+6. SQL Murder Mystery
 
-The theory courses (1 & 3) will be assigned as pre-reading homework before the SQL 101 and 102 classes, respectively. You will work on SQL 101 and 102 (2 & 4) with your captains in class. Then, you will have a week to solve the SQL Murder Mystery (5) independently. 
+The theory courses (1 & 4) will be assigned as pre-reading homework before the SQL 101 and 103 classes, respectively. You will work on SQL 101, 102, and 103 (2, 3, 5) with your captains in class. Then, you will have a week to solve the SQL Murder Mystery (6) independently. 
 
 ### Jupyter Notebooks - Our "Database Environment"
 
@@ -39,7 +43,7 @@ If you have never heard of a Jupyter Notebook and don't know how they work, we s
 
 **SQL Cheatsheet**
 
-We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/) to use as a companion to the notebooks and lessons. The cheat sheet was made with the lesson content in SQL 101 and 102 in mind.
+We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlcheatsheetandresources-coop/) to use as a companion to the notebooks and lessons. The cheat sheet was made with the lesson content in SQL 101, 102, and 103 in mind.
 
 ---
 
@@ -51,6 +55,8 @@ We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlchea
 
 - **Slide Deck**: [Click Here](https://docs.google.com/presentation/d/1kK4vbOvCt8N2Xg9Zqht1JmssDZkESJDbZzJlYkolsTo/edit?usp=sharing)
 - **Lecture Video**: [Click Here](https://drive.google.com/file/d/1NVmCvai1odVcW0omK7AKaB0AvE69Q2gZ/view)
+
+[Back to top](#about-these-classes)
 
 ---
 
@@ -69,15 +75,11 @@ Topics Covered:
 - Aggregating/Summarizing data (`GROUP BY`, `AVG`, `COUNT`, `SUM`)
 - Sorting data (`ORDER BY`)
 
----
-
-### **Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**
-
-[**Click Here**](sql-theory/COOPSQL102-Theory-CombiningDataFromMultipleTables.md) to access the Combining Data in SQL Crash Course. 
+[Back to top](#about-these-classes)
 
 ---
 
-### **SQL 102 - Intermediate Queries and Combining Data** 
+### **SQL 102 - Advanced Querying Techniques** 
 
 **SQL 102 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_102_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
@@ -88,19 +90,47 @@ Topics Covered:
 Topics Covered:
 
 - `CASE` Statements
-- Combining Data (`UNION`, `INNER`, `LEFT`, `RIGHT`, `FULL OUTER` joins)
-- Subqueries & Common Table Expressions (CTE)
+- Subqueries 
+- Common Table Expressions (CTE)
+- Window Functions
+
+[Back to top](#about-these-classes)
 
 --- 
 
-## **SQL Murder Mystery** 
+### **Combining Data in SQL Crash Course - How to use `JOIN` and `UNION`**
+
+[**Click Here**](sql-theory/COOPSQL103-Theory-CombiningDataFromMultipleTables.md) to access the Combining Data in SQL Crash Course. 
+
+- [**Lecture Video**]()
+
+[Back to top](#about-these-classes)
+
+---
+### **SQL 103 - Combining Data from Multiple Tables***
+
+**SQL 103 Notebook:**
+
+**SQL 103 Slide Deck:**
+
+Topics Covered:
+- `JOIN`s (`INNER`, `LEFT`, `RIGHT`, `FULL OUTER`)
+- `UNION`
+
+[Back to top](#about-these-classes)
+
+---
+
+### **SQL Murder Mystery** 
 
 **SQL Murder Mystery Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/COOP_SQL_Murder_Mystery.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-A murder happened in SQL City, and we need your SQL skills to help crack the case! Put the skills that you learned in SQL 101 and 102 to the test and solve the SQL Murder Mystery!
+A murder happened in SQL City, and we need your SQL skills to help crack the case! Put the skills that you learned in SQL 101 - 103 to the test and solve the SQL Murder Mystery!
 
 Topics Covered:
 
-- Everything in SQL 101 & 102!
+- Everything in SQL 101, 102, and 103!
+
+[Back to top](#about-these-classes)

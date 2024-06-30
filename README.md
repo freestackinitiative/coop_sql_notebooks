@@ -15,7 +15,7 @@ Our classes can be broken down into two sections: **Theory** and **Practice**. T
 
 **Practice**
 
-- [**SQL 101 - Introduction to Databases and Querying:**](#sql-101---introduction-to-databases-and-querying)  Apply the theory you learned in the Database Crash Course to learning how to write basic queries against single tables in a database.
+- [**SQL 101 - Basic Data Retrieval:**](#sql-101---basic-data-retrieval)  Apply the theory you learned in the Database Crash Course to learning how to write basic queries against single tables in a database.
 - [**SQL 102 - Advanced Querying Techniques:**](#sql-102---advanced-querying-techniques) Refine the querying skills that you began developing in SQL 101 and learn advanced techniques to write more complex queries and improve your search results. Here you'll learn about using the `CASE` statement to add search conditions to your queries, how to use subqueries and common table expressions (CTEs) for multi-step queries, and we'll introduce you to the concept of window aggregation. With these techniques in your toolkit, you'll be able to write queries that answer more complex questions that are more likely to come up on the job.  
 - [**SQL 103 - Combining Data from Multiple Tables:**](#sql-103---combining-data-from-multiple-tables) Up to this point, you have only written queries that deal with a single table. But many real-world scenarios will require you to combine data from multiple tables to answer questions. Here, we'll teach you how to combine data from multiple tables using `joins`. You'll learn the theory behind how joins work, the different methods of joining data, and when to use each one. After completing this course, you will be better prepared for entry-level SQL technical interview questions.
 - [**SQL Murder Mystery:**](#sql-murder-mystery) There's been a murder in SQL City and we need your SQL skills to help us find the killer! This is your chance to put the skills you learned in SQL 101 to 103 to the test and solve the mystery of who committed the murder in SQL City!
@@ -24,7 +24,7 @@ Our classes can be broken down into two sections: **Theory** and **Practice**. T
 
 For most students, the following path through these courses is recommended:
 1. Database Crash Course - Introduction to Relational Databases and SQL (*~30 minutes to complete*)
-2. SQL 101 - Introduction to Databases and Querying (*~2.5 hours to complete*)
+2. SQL 101 - Basic Data Retrieval (*~2.5 hours to complete*)
 3. SQL 102 - Advanced Querying Techniques (*~2 hours to complete*)
 4. Combining Data in SQL Crash Course - How to use `JOIN` and `UNION` (*~30 minutes to complete*)
 5. SQL 103 - Combining Data from Multiple Tables (*~2.5 hours to complete*)
@@ -60,7 +60,7 @@ We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlchea
 
 ---
 
-### **SQL 101 - Introduction to Databases and Querying**
+### **SQL 101 - Basic Data Retrieval**
 
 **SQL 101 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_101_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>

@@ -9,7 +9,7 @@ Our classes can be broken down into two sections: **Theory** and **Practice**. T
 **Theory (Asynchronous)**
 
 - [**SQL 100 - Introduction to Relational Databases and SQL**](#sql-100---introduction-to-relational-databases-and-sql) Learn the foundational theory behind relational databases and SQL. This crash course gives you the highlights from a university course in Databases that you should know in about 30 minutes. Go through this before completing `SQL 101`.
-- [**SQL 103A - Combining Data in SQL: How to use `JOIN` and `UNION`**](#combining-data-in-sql-crash-course---how-to-use-join-and-union) A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. ***Read this before you take SQL 103.*** 
+- [**SQL 103A - Combining Data in SQL: How to use `JOIN` and `UNION`**](#sql-103a---combining-data-in-sql-how-to-use-join-and-union) A primer on how to combine data horizontally (using `JOIN` statements) and vertically (using `UNION`). You can use this to learn how joins work and as a refresher before SQL interviews. ***Read this before you take SQL 103.*** 
 
   >**Prerequisite**: You should have already gone through at least SQL 100 and SQL 101 before doing this.
 

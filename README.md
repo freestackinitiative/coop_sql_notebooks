@@ -122,7 +122,7 @@ Topics Covered:
 
 ---
 
-### **SQL Murder Mystery** 
+### **SQL 104 - SQL Murder Mystery** 
 
 **SQL Murder Mystery Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_Murder_Mystery.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>

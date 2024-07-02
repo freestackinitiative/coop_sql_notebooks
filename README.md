@@ -112,7 +112,7 @@ Topics Covered:
 **SQL 103 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_103_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 
-**SQL 103 Slide Deck:**
+**SQL 103 Slide Deck:** [Click Here](https://docs.google.com/presentation/d/15PczTO_7yZ97QaMjPKUosRUBa9Hw5G_oAgX1hDlfzdc/edit?usp=sharing)
 
 Topics Covered:
 - `JOIN`s (`INNER`, `LEFT`, `RIGHT`, `FULL OUTER`)

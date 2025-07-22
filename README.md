@@ -62,7 +62,7 @@ We also recommend this [SQL Cheat Sheet](https://martinmarroyo.github.io/sqlchea
 
 ### **SQL 101 - Basic Data Retrieval**
 
-**SQL 101 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_101_PracticeNotebook.ipynb">
+**SQL 101 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/notebooks/COOP_SQL_101_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>  
 
@@ -81,7 +81,7 @@ Topics Covered:
 
 ### **SQL 102 - Advanced Querying Techniques** 
 
-**SQL 102 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_102_PracticeNotebook.ipynb">
+**SQL 102 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/notebooks/COOP_SQL_102_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
@@ -109,7 +109,7 @@ Topics Covered:
 ---
 ### **SQL 103 - Combining Data from Multiple Tables**
 
-**SQL 103 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_103_PracticeNotebook.ipynb">
+**SQL 103 Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/notebooks/COOP_SQL_103_PracticeNotebook.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 
 **SQL 103 Slide Deck:** [Click Here](https://docs.google.com/presentation/d/15PczTO_7yZ97QaMjPKUosRUBa9Hw5G_oAgX1hDlfzdc/edit?usp=sharing)
@@ -124,7 +124,7 @@ Topics Covered:
 
 ### **SQL 104 - SQL Murder Mystery** 
 
-**SQL Murder Mystery Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/v2/notebooks/COOP_SQL_Murder_Mystery.ipynb">
+**SQL Murder Mystery Notebook:** <a target="_blank" href="https://colab.research.google.com/github/freestackinitiative/coop_sql_notebooks/blob/main/notebooks/COOP_SQL_Murder_Mystery.ipynb">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
